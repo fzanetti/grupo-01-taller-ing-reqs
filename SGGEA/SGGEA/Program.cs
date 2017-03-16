@@ -16,7 +16,7 @@ namespace SGGEA
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LogIn());
+            Application.Run(FormPrincipal.getInstancia());
         }
     }
 }
