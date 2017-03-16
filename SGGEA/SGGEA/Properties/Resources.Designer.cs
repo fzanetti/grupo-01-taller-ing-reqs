@@ -101,6 +101,16 @@ namespace SGGEA.Properties {
         }
         
         /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fondoPopup {
+            get {
+                object obj = ResourceManager.GetObject("fondoPopup", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Icon similar a (Icono).
         /// </summary>
         internal static System.Drawing.Icon icono {
@@ -133,9 +143,9 @@ namespace SGGEA.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap principal_ok {
+        internal static System.Drawing.Bitmap pantalla_principal {
             get {
-                object obj = ResourceManager.GetObject("principal_ok", resourceCulture);
+                object obj = ResourceManager.GetObject("pantalla-principal", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

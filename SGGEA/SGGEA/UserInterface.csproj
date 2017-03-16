@@ -83,6 +83,12 @@
     <Compile Include="UserControls\LabelError.Designer.cs">
       <DependentUpon>LabelError.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\ConfirmationDialog.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ConfirmationDialog.Designer.cs">
+      <DependentUpon>ConfirmationDialog.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FormPrincipal.resx">
       <DependentUpon>FormPrincipal.cs</DependentUpon>
     </EmbeddedResource>
@@ -102,6 +108,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UserControls\ConfirmationDialog.resx">
+      <DependentUpon>ConfirmationDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -119,13 +128,13 @@
   <ItemGroup>
     <Content Include="Resources\admin-usuarios-hover.png" />
     <Content Include="Resources\admin-usuarios.png" />
-    <Content Include="Resources\alta-usuario.png" />
     <Content Include="Resources\btnAtras.png" />
     <Content Include="Resources\btnMenu.png" />
+    <Content Include="Resources\fondoPopup.png" />
     <Content Include="Resources\icono.ico" />
     <Content Include="Resources\logIn.png" />
     <Content Include="Resources\menu.png" />
-    <Content Include="Resources\principal_ok.png" />
+    <Content Include="Resources\pantalla-principal.png" />
     <Content Include="Resources\usuarios.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

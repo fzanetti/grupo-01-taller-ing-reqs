@@ -24,12 +24,5 @@ namespace SGGEA
         {
             InitializeComponent();
         }
-
-        public void mostrarPrincipal()
-        {
-            this.login.Visible = false;
-            this.principal.Visible = true;
-        }
-
     }
 }

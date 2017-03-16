@@ -6,6 +6,7 @@
         /// Variable del diseñador requerida.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
+        private System.ComponentModel.ComponentResourceManager resources= new System.ComponentModel.ComponentResourceManager(typeof(FormPrincipal));
 
         /// <summary>
         /// Limpiar los recursos que se estén utilizando.
@@ -28,29 +29,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPrincipal));
-            this.login = new SGGEA.Login();
-            this.principal = new SGGEA.Principal();
             this.SuspendLayout();
-            // 
-            // login
-            // 
+            this.login = new SGGEA.Login();
             this.login.BackColor = System.Drawing.Color.White;
             this.login.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("login.BackgroundImage")));
             this.login.Location = new System.Drawing.Point(0, 0);
             this.login.Name = "login";
             this.login.Size = new System.Drawing.Size(404, 800);
             this.login.TabIndex = 0;
-            // 
-            // principal
-            // 
-            this.principal.BackColor = System.Drawing.Color.White;
-            this.principal.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("principal.BackgroundImage")));
-            this.principal.Location = new System.Drawing.Point(0, 0);
-            this.principal.Name = "principal";
-            this.principal.Size = new System.Drawing.Size(404, 800);
-            this.principal.TabIndex = 1;
-            this.principal.Visible = false;
+        
             // 
             // FormPrincipal
             // 
@@ -58,8 +45,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(404, 800);
-            this.Controls.Add(this.principal);
-            this.Controls.Add(this.login);
             this.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -68,15 +53,48 @@
             this.Name = "FormPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sunny Patch";
+            this.Controls.Add(this.login);
+
             this.ResumeLayout(false);
 
         }
+
+        
+        public void InitializeLogin()
+        {
+            this.SuspendLayout();
+            this.login = new SGGEA.Login();
+            this.login.BackColor = System.Drawing.Color.White;
+            this.login.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("login.BackgroundImage")));
+            this.login.Location = new System.Drawing.Point(0, 0);
+            this.login.Name = "login";
+            this.login.Size = new System.Drawing.Size(404, 800);
+            this.login.TabIndex = 0;
+            this.Controls.Clear();
+            this.Controls.Add(this.login);
+            this.ResumeLayout(false);
+        }
+
+        public void InitializePrincipal()
+        {
+            this.SuspendLayout();
+            this.principal = new SGGEA.Principal();
+            this.principal.BackColor = System.Drawing.Color.White;
+            this.principal.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("principal.BackgroundImage")));
+            this.principal.Location = new System.Drawing.Point(0, 0);
+            this.principal.Name = "principal";
+            this.principal.Size = new System.Drawing.Size(404, 800);
+            this.principal.TabIndex = 1;
+            this.Controls.Clear();
+            this.Controls.Add(this.principal);
+            this.ResumeLayout(false);
+        }
+
 
         #endregion
 
         private Login login;
         private Principal principal;
-
 
 
 

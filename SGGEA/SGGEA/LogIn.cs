@@ -25,9 +25,7 @@ namespace SGGEA
 
             //Si da error la validación:
             //lblError.Visible = true;
-            FormPrincipal.getInstancia().mostrarPrincipal();
-
-
+            FormPrincipal.getInstancia().InitializePrincipal();
         }
 
         private void tbContrasenia_KeyPress(object sender, KeyPressEventArgs e)

@@ -19,14 +19,19 @@ namespace SGGEA
             InitializeComponent();
         }
 
-        private void Principal_MouseEnter(object sender, EventArgs e)
+        private void btnAdminUsu_MouseEnter(object sender, EventArgs e)
         {
             this.btnAdminUsu.BackgroundImage = global::SGGEA.Properties.Resources.adminUsuariosHover;
         }
 
-        private void Principal_MouseLeave(object sender, EventArgs e)
+        private void btnAdminUsu_MouseLeave(object sender, EventArgs e)
         {
             this.btnAdminUsu.BackgroundImage = global::SGGEA.Properties.Resources.adminUsuarios;
+        }
+
+        private void btnAdminUsu_Click(object sender, EventArgs e)
+        {
+          
         }
 
         private void btnLogout_MouseEnter(object sender, EventArgs e)
@@ -37,8 +42,18 @@ namespace SGGEA
 
         private void btnLogout_MouseLeave(object sender, EventArgs e)
         {
-            this.btnLogout.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnLogout.BackColor = Color.FromArgb(250, 250, 250);
             this.btnLogout.ForeColor = System.Drawing.SystemColors.ControlText;
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            this.btnMenu.BackgroundImage = global::SGGEA.Properties.Resources.btnMenu;
+            this.imgMenu.Visible = false;
+            this.btnPerfilesUsuario.Visible = false;
+            this.btnLogout.Visible = false;
+            menuActivo = false;
+            showLogoutConfirmation(true);
         }
 
         private void btnPerfilesUsuario_MouseEnter(object sender, EventArgs e)
@@ -49,18 +64,17 @@ namespace SGGEA
 
         private void btnPerfilesUsuario_MouseLeave(object sender, EventArgs e)
         {
-            this.btnPerfilesUsuario.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnLogout.BackColor = Color.FromArgb(250, 250, 250);
             this.btnPerfilesUsuario.ForeColor = System.Drawing.SystemColors.ControlText;
         }
 
         private void btnPerfilesUsuario_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void btnLogout_Click(object sender, EventArgs e)
-        {
-
+            this.btnMenu.BackgroundImage = global::SGGEA.Properties.Resources.btnMenu;
+            this.imgMenu.Visible = false;
+            this.btnPerfilesUsuario.Visible = false;
+            this.btnLogout.Visible = false;
+            menuActivo = false;
         }
 
         private void btnMenu_Click(object sender, EventArgs e)
@@ -71,22 +85,27 @@ namespace SGGEA
                 this.imgMenu.Visible = true;
                 this.btnPerfilesUsuario.Visible = true;
                 this.btnLogout.Visible = true;
-                menuActivo = true;
-                //this.Invalidate();
-                //this.Refresh();
-
             }
             else
             {
-                menuActivo = false;
                 this.btnMenu.BackgroundImage = global::SGGEA.Properties.Resources.btnMenu;
                 this.imgMenu.Visible = false;
                 this.btnPerfilesUsuario.Visible = false;
                 this.btnLogout.Visible = false;
-                this.Invalidate();
-                this.Refresh();
             }
-          
+            menuActivo = !menuActivo;
         }
+
+        private void btnConfirmarLogout_Click(object sender, EventArgs e)
+        {
+            showLogoutConfirmation(false);
+            FormPrincipal.getInstancia().InitializeLogin();
+        }
+
+        private void btnCancelarLogout_Click(object sender, EventArgs e)
+        {
+            showLogoutConfirmation(false);
+        }
+
     }
 }

@@ -1,4 +1,5 @@
-﻿namespace SGGEA
+﻿using System.Windows.Forms;
+namespace SGGEA
 {
     partial class Principal
     {
@@ -6,7 +7,7 @@
         /// Variable del diseñador requerida.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
-
+       
         /// <summary> 
         /// Limpiar los recursos que se estén utilizando.
         /// </summary>
@@ -28,6 +29,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Principal));
             this.btnPerfilesUsuario = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
             this.btnMenu = new System.Windows.Forms.PictureBox();
@@ -40,7 +42,7 @@
             // 
             // btnPerfilesUsuario
             // 
-            this.btnPerfilesUsuario.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnPerfilesUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.btnPerfilesUsuario.FlatAppearance.BorderSize = 0;
             this.btnPerfilesUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPerfilesUsuario.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -52,10 +54,11 @@
             this.btnPerfilesUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnPerfilesUsuario.UseVisualStyleBackColor = false;
             this.btnPerfilesUsuario.Visible = false;
+            this.btnPerfilesUsuario.Click += new System.EventHandler(this.btnPerfilesUsuario_Click);
             // 
             // btnLogout
             // 
-            this.btnLogout.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnLogout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.btnLogout.FlatAppearance.BorderSize = 0;
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogout.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -67,6 +70,7 @@
             this.btnLogout.Text = "Cerrar sesión";
             this.btnLogout.UseVisualStyleBackColor = false;
             this.btnLogout.Visible = false;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // btnMenu
             // 
@@ -99,14 +103,16 @@
             this.btnAdminUsu.Size = new System.Drawing.Size(82, 102);
             this.btnAdminUsu.TabIndex = 0;
             this.btnAdminUsu.TabStop = false;
-            this.btnAdminUsu.MouseEnter += new System.EventHandler(this.Principal_MouseEnter);
-            this.btnAdminUsu.MouseLeave += new System.EventHandler(this.Principal_MouseLeave);
+            this.btnAdminUsu.Click += new System.EventHandler(this.btnAdminUsu_Click);
+            this.btnAdminUsu.MouseEnter += new System.EventHandler(this.btnAdminUsu_MouseEnter);
+            this.btnAdminUsu.MouseLeave += new System.EventHandler(this.btnAdminUsu_MouseLeave);
+
             // 
             // Principal
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
-            this.BackgroundImage = global::SGGEA.Properties.Resources.principal_ok;
+            this.BackgroundImage = global::SGGEA.Properties.Resources.pantalla_principal;
             this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.btnPerfilesUsuario);
             this.Controls.Add(this.btnMenu);
@@ -118,7 +124,41 @@
             ((System.ComponentModel.ISupportInitialize)(this.imgMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAdminUsu)).EndInit();
             this.ResumeLayout(false);
+        }
 
+        public void showLogoutConfirmation(bool show)
+        {
+            this.SuspendLayout();
+            if (show)
+            {
+                System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Principal));
+                this.confirmLogout = new SGGEA.UserControls.ConfirmationDialog();
+                this.confirmLogout.BackColor = System.Drawing.Color.Transparent;
+                this.confirmLogout.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("confirmLogout.BackgroundImage")));
+                this.confirmLogout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+                this.confirmLogout.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                this.confirmLogout.Location = new System.Drawing.Point(46, 276);
+                this.confirmLogout.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+                this.confirmLogout.Name = "confirmLogout";
+                this.confirmLogout.Size = new System.Drawing.Size(310, 181);
+                this.confirmLogout.TabIndex = 9;
+                this.confirmLogout.TextoAceptar = "Aceptar";
+                this.confirmLogout.TextoCancelar = "Cancelar";
+                this.confirmLogout.TextoMensaje = "¿Seguro que desea salir?";
+                this.confirmLogout.PosicionBtnAceptar = DockStyle.Left;
+                this.confirmLogout.PosicionBtnCancelar = DockStyle.Right;
+                this.confirmLogout.setConfirmationClickEvent(this.btnConfirmarLogout_Click);
+                this.confirmLogout.setCancelClickEvent(this.btnCancelarLogout_Click);
+                this.Controls.Add(this.confirmLogout);
+                //this.Controls.SetChildIndex(this.confirmLogout,0);
+            }
+            else
+            {
+                this.confirmLogout.Visible = false;
+                this.Controls.Remove(this.confirmLogout);
+                this.confirmLogout = null;
+            }
+            this.ResumeLayout(false);
         }
 
         #endregion
@@ -128,5 +168,6 @@
         private System.Windows.Forms.PictureBox btnMenu;
         private System.Windows.Forms.Button btnPerfilesUsuario;
         private System.Windows.Forms.Button btnLogout;
+        private UserControls.ConfirmationDialog confirmLogout;
     }
 }
