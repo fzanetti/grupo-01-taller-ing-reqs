@@ -39,11 +39,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Core\ILogin.cs" />
+    <Compile Include="Core\IPersistencia.cs" />
+    <Compile Include="Core\LoginService.cs" />
+    <Compile Include="Core\PersistenciaService.cs" />
+    <Compile Include="Domain\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Core\" />
-    <Folder Include="Domain\" />
+    <None Include="Resources\datos_de_usuarios.csv" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

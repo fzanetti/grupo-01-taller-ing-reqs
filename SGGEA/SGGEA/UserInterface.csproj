@@ -124,7 +124,12 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\API\API.csproj">
+      <Project>{693e27d4-6cbc-4bed-a655-9a8b7c7eed40}</Project>
+      <Name>API</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\admin-usuarios-hover.png" />
     <Content Include="Resources\admin-usuarios.png" />

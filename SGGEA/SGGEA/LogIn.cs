@@ -7,15 +7,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SGGEA;
 
 namespace SGGEA
 {
     public partial class Login : UserControl
     {
 
+        private ILogin _login;
+        
+        
+
         public Login()
         {
             InitializeComponent();
+            _login = new LoginService();
             lblError.Text = Globals.ErrorLogin;
         }
 
@@ -23,9 +29,22 @@ namespace SGGEA
         {
             //Validar
 
-            //Si da error la validación:
-            //lblError.Visible = true;
-            FormPrincipal.getInstancia().InitializePrincipal();
+            if (String.IsNullOrEmpty(tbUsuario.Text))
+            {
+                lblError.Visible = true;
+            }else if (String.IsNullOrEmpty(tbContrasenia.Text))
+            {
+                lblError.Visible = true;
+            }
+            else if(!_login.ValidarLogin(tbUsuario.Text,tbContrasenia.Text))
+            {
+                lblError.Visible = true;
+            }
+            else
+            {
+                FormPrincipal.getInstancia().InitializePrincipal();
+            }
+            
         }
 
         private void tbContrasenia_KeyPress(object sender, KeyPressEventArgs e)
