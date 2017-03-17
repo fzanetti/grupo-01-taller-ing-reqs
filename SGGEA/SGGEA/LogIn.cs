@@ -27,16 +27,20 @@ namespace SGGEA
 
         private void btnIniciarSesion_Click(object sender, EventArgs e)
         {
-            //Validar
+            doLogin();
+        }
 
+        private void doLogin()
+        {
             if (String.IsNullOrEmpty(tbUsuario.Text))
             {
                 lblError.Visible = true;
-            }else if (String.IsNullOrEmpty(tbContrasenia.Text))
+            }
+            else if (String.IsNullOrEmpty(tbContrasenia.Text))
             {
                 lblError.Visible = true;
             }
-            else if(!_login.ValidarLogin(tbUsuario.Text,tbContrasenia.Text))
+            else if (!_login.ValidarLogin(tbUsuario.Text, tbContrasenia.Text))
             {
                 lblError.Visible = true;
             }
@@ -44,12 +48,22 @@ namespace SGGEA
             {
                 FormPrincipal.getInstancia().InitializePrincipal();
             }
-            
         }
 
         private void tbContrasenia_KeyPress(object sender, KeyPressEventArgs e)
         {
-            tbContrasenia.UseSystemPasswordChar = true;
+            lblContrasenia.Visible = false;
+            if (e.KeyChar == (char)13)
+            {
+                doLogin();
+            }
         }
+
+        private void lblContrasenia_Click(object sender, EventArgs e)
+        {
+            this.ActiveControl = tbContrasenia;
+        }
+
+     
     }
 }

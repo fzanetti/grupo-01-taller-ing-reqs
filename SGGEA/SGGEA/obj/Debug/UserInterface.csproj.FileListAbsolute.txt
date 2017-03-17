@@ -23,3 +23,6 @@ C:\Users\gotero\Facultad\TallerIngReqs\Obligatorio\grupo-01-taller-ing-reqs\SGGE
 C:\Users\gotero\Facultad\TallerIngReqs\Obligatorio\grupo-01-taller-ing-reqs\SGGEA\SGGEA\bin\Debug\SGGEA.pdb
 C:\Users\gotero\Facultad\TallerIngReqs\Obligatorio\grupo-01-taller-ing-reqs\SGGEA\SGGEA\bin\Debug\API.dll
 C:\Users\gotero\Facultad\TallerIngReqs\Obligatorio\grupo-01-taller-ing-reqs\SGGEA\SGGEA\bin\Debug\API.pdb
+C:\Users\Fernando Zanetti\Documents\Obligatorio Taller Ing. Req\grupo-01-taller-ing-reqs\SGGEA\SGGEA\bin\Debug\API.dll
+C:\Users\Fernando Zanetti\Documents\Obligatorio Taller Ing. Req\grupo-01-taller-ing-reqs\SGGEA\SGGEA\bin\Debug\API.pdb
+C:\Users\Fernando Zanetti\Documents\Obligatorio Taller Ing. Req\grupo-01-taller-ing-reqs\SGGEA\SGGEA\obj\Debug\UserInterface.csprojResolveAssemblyReference.cache

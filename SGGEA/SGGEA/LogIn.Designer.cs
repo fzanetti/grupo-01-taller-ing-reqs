@@ -28,11 +28,36 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.lblContrasenia = new System.Windows.Forms.Label();
+            this.tbContrasenia = new SGGEA.UserControls.CustomTextBox();
             this.lblError = new SGGEA.UserControls.LabelError();
             this.tbUsuario = new SGGEA.UserControls.CustomTextBox();
-            this.tbContrasenia = new SGGEA.UserControls.CustomTextBox();
             this.btnIniciarSesion = new SGGEA.UserControls.CustomButton();
             this.SuspendLayout();
+            // 
+            // lblContrasenia
+            // 
+            this.lblContrasenia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(226)))), ((int)(((byte)(228)))));
+            this.lblContrasenia.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.lblContrasenia.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblContrasenia.Location = new System.Drawing.Point(114, 301);
+            this.lblContrasenia.Name = "lblContrasenia";
+            this.lblContrasenia.Size = new System.Drawing.Size(112, 23);
+            this.lblContrasenia.TabIndex = 5;
+            this.lblContrasenia.Text = "Contraseña";
+            this.lblContrasenia.Click += new System.EventHandler(this.lblContrasenia_Click);
+            // 
+            // tbContrasenia
+            // 
+            this.tbContrasenia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(226)))), ((int)(((byte)(228)))));
+            this.tbContrasenia.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbContrasenia.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbContrasenia.Location = new System.Drawing.Point(113, 302);
+            this.tbContrasenia.Name = "tbContrasenia";
+            this.tbContrasenia.Size = new System.Drawing.Size(175, 22);
+            this.tbContrasenia.TabIndex = 2;
+            this.tbContrasenia.UseSystemPasswordChar = true;
+            this.tbContrasenia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbContrasenia_KeyPress);
             // 
             // lblError
             // 
@@ -56,19 +81,7 @@
             this.tbUsuario.Name = "tbUsuario";
             this.tbUsuario.Size = new System.Drawing.Size(175, 22);
             this.tbUsuario.TabIndex = 1;
-            this.tbUsuario.Text = "Nombre de usuario";
-            // 
-            // tbContrasenia
-            // 
-            this.tbContrasenia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(226)))), ((int)(((byte)(228)))));
-            this.tbContrasenia.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tbContrasenia.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbContrasenia.Location = new System.Drawing.Point(111, 303);
-            this.tbContrasenia.Name = "tbContrasenia";
-            this.tbContrasenia.Size = new System.Drawing.Size(175, 22);
-            this.tbContrasenia.TabIndex = 2;
-            this.tbContrasenia.Text = "Contraseña";
-            this.tbContrasenia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbContrasenia_KeyPress);
+            this.tbUsuario.Text = " Nombre de usuario";
             // 
             // btnIniciarSesion
             // 
@@ -90,9 +103,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::SGGEA.Properties.Resources.LogIn;
+            this.Controls.Add(this.lblContrasenia);
+            this.Controls.Add(this.tbContrasenia);
             this.Controls.Add(this.lblError);
             this.Controls.Add(this.tbUsuario);
-            this.Controls.Add(this.tbContrasenia);
             this.Controls.Add(this.btnIniciarSesion);
             this.Name = "Login";
             this.Size = new System.Drawing.Size(404, 800);
@@ -103,9 +117,10 @@
 
         #endregion
 
-        private UserControls.CustomTextBox tbContrasenia;
         private UserControls.CustomButton btnIniciarSesion;
         private UserControls.CustomTextBox tbUsuario;
         private UserControls.LabelError lblError;
+        private System.Windows.Forms.Label lblContrasenia;
+        private UserControls.CustomTextBox tbContrasenia;
     }
 }
