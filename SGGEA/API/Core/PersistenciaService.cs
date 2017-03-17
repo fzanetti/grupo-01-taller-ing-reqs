@@ -3,49 +3,43 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Reflection;
+using System.IO;
 
 namespace SGGEA
 {
     public class PersistenciaService : IPersistencia
     {
-        private const string _archivoUsuarios = "datos_de_usuarios.csv";
+        private const string _archivoUsuarios = "API.Resources.datos_de_usuarios.csv";
 
         public List<User> ObtenerUsuarios()
         {
             List<User> usuarios = new List<User>();
 
-            List<string> usuariosString = new List<string>();
-
-            usuariosString = this.LeerArchivo(_archivoUsuarios);
+            string[] usuariosString = this.LeerArchivo();
 
             foreach(string s in usuariosString){
-
                 User usr;
                 usr = ParsearUsuario(s);
                 usuarios.Add(usr);
-
             }
 
             return usuarios;
         }
-
-        private List<string> LeerArchivo(String FileName)
+        
+        private string[] LeerArchivo()
         {
-            List<string> retorno = new List<string>();
+            var assembly = Assembly.GetExecutingAssembly();
+            string result;
 
-            string tempLine;
-            try
+            using (Stream stream = assembly.GetManifestResourceStream(_archivoUsuarios))
+            using (StreamReader reader = new StreamReader(stream))
             {
-                System.IO.StreamReader file = new System.IO.StreamReader(FileName);
-                while ((tempLine = file.ReadLine()) != null)
-                    retorno.Add(tempLine);
+                result = reader.ReadToEnd();
             }
-            catch(Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-
-            return retorno;
+            string[] stringSeparators = new string[] { "\r\n" };
+            string[] lines = result.Split(stringSeparators, StringSplitOptions.None);
+            return lines;
         }
 
         private User ParsearUsuario(string linea)
