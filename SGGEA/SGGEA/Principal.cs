@@ -59,11 +59,7 @@ namespace SGGEA
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
-            this.btnMenu.BackgroundImage = global::SGGEA.Properties.Resources.btnMenu;
-            this.imgMenu.Visible = false;
-            this.btnPerfilesUsuario.Visible = false;
-            this.btnLogout.Visible = false;
-            _menuActivo = false;
+            EsconderMenu();
             this.confirmLogout.Visible = true;
         }
 
@@ -81,11 +77,7 @@ namespace SGGEA
 
         private void btnPerfilesUsuario_Click(object sender, EventArgs e)
         {
-            this.btnMenu.BackgroundImage = global::SGGEA.Properties.Resources.btnMenu;
-            this.imgMenu.Visible = false;
-            this.btnPerfilesUsuario.Visible = false;
-            this.btnLogout.Visible = false;
-            _menuActivo = false;
+            EsconderMenu();
         }
 
         private void btnMenu_Click(object sender, EventArgs e)
@@ -97,18 +89,38 @@ namespace SGGEA
                 this.btnPerfilesUsuario.Visible = true;
                 this.btnLogout.Visible = true;
                 this.btnPerfilesUsuario.Visible = _login.UsuarioPuedeAcceder(Funciones.Admin_de_Perfiles_de_usuario);
+                this.btnFunciones.Visible = _login.UsuarioPuedeAcceder(Funciones.Admin_de_Funciones);
+                this.btnCompGen.Visible = _login.UsuarioPuedeAcceder(Funciones.Admin_de_sistema_de_componentes_generadores);
+                this.btnBancos.Visible = _login.UsuarioPuedeAcceder(Funciones.Admin_de_bancos_de_almacenamiento);
+                this.btnControlEnergia.Visible = _login.UsuarioPuedeAcceder(Funciones.Admin_de_sistema_de_control_de_energia);
+                this.btnProvisionEnergia.Visible = _login.UsuarioPuedeAcceder(Funciones.Admin_de_sistema_de_provision_de_energia);
+                this.btnConversionEnergia.Visible = _login.UsuarioPuedeAcceder(Funciones.Admin_de_sistema_de_conversion_de_energia);
+                this.btnBancosBateria.Visible = _login.UsuarioPuedeAcceder(Funciones.Admin_de_bancos_de_baterias);
                 this.Controls.SetChildIndex(this.btnPerfilesUsuario, 0);
                 this.Controls.SetChildIndex(this.btnLogout, 1);
                 this.Controls.SetChildIndex(this.imgMenu, 2);
+                _menuActivo = true;
             }
             else
             {
-                this.btnMenu.BackgroundImage = global::SGGEA.Properties.Resources.btnMenu;
-                this.imgMenu.Visible = false;
-                this.btnPerfilesUsuario.Visible = false;
-                this.btnLogout.Visible = false;
+                EsconderMenu();
             }
-            _menuActivo = !_menuActivo;
+        }
+
+        private void EsconderMenu()
+        {
+            this.btnMenu.BackgroundImage = global::SGGEA.Properties.Resources.btnMenu;
+            this.imgMenu.Visible = false;
+            this.btnPerfilesUsuario.Visible = false;
+            this.btnFunciones.Visible = false;
+            this.btnCompGen.Visible = false;
+            this.btnBancos.Visible = false;
+            this.btnControlEnergia.Visible = false;
+            this.btnProvisionEnergia.Visible = false;
+            this.btnConversionEnergia.Visible = false;
+            this.btnBancosBateria.Visible = false;
+            this.btnLogout.Visible = false;
+            _menuActivo = false;
         }
 
         private void btnConfirmarLogout_Click(object sender, EventArgs e)

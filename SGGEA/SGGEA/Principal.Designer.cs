@@ -43,6 +43,13 @@ namespace SGGEA
             this.btnMetricas = new System.Windows.Forms.Label();
             this.btnBitacoraAct = new System.Windows.Forms.Label();
             this.confirmLogout = new SGGEA.UserControls.ConfirmationDialog();
+            this.btnFunciones = new System.Windows.Forms.Label();
+            this.btnCompGen = new System.Windows.Forms.TextBox();
+            this.btnBancos = new System.Windows.Forms.TextBox();
+            this.btnControlEnergia = new System.Windows.Forms.Label();
+            this.btnProvisionEnergia = new System.Windows.Forms.Label();
+            this.btnConversionEnergia = new System.Windows.Forms.Label();
+            this.btnBancosBateria = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgMenu)).BeginInit();
             this.SuspendLayout();
@@ -61,7 +68,7 @@ namespace SGGEA
             // imgMenu
             // 
             this.imgMenu.BackColor = System.Drawing.Color.Transparent;
-            this.imgMenu.BackgroundImage = global::SGGEA.Properties.Resources.menu;
+            this.imgMenu.BackgroundImage = global::SGGEA.Properties.Resources.fondoMenu;
             this.imgMenu.Location = new System.Drawing.Point(22, 131);
             this.imgMenu.Name = "imgMenu";
             this.imgMenu.Size = new System.Drawing.Size(204, 533);
@@ -157,10 +164,10 @@ namespace SGGEA
             this.btnAdminUsu.Size = new System.Drawing.Size(82, 102);
             this.btnAdminUsu.TabIndex = 7;
             this.btnAdminUsu.UseVisualStyleBackColor = false;
+            this.btnAdminUsu.Visible = false;
             this.btnAdminUsu.Click += new System.EventHandler(this.btnAdminUsu_Click);
             this.btnAdminUsu.MouseEnter += new System.EventHandler(this.btnAdminUsu_MouseEnter);
             this.btnAdminUsu.MouseLeave += new System.EventHandler(this.btnAdminUsu_MouseLeave);
-            this.btnAdminUsu.Visible = false;
             // 
             // btnBitacoraFallas
             // 
@@ -198,7 +205,7 @@ namespace SGGEA
             this.confirmLogout.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("confirmLogout.BackgroundImage")));
             this.confirmLogout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.confirmLogout.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.confirmLogout.Location = new System.Drawing.Point(46, 276);
+            this.confirmLogout.Location = new System.Drawing.Point(49, 267);
             this.confirmLogout.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.confirmLogout.Name = "confirmLogout";
             this.confirmLogout.PosicionBtnAceptar = System.Windows.Forms.DockStyle.Left;
@@ -212,12 +219,116 @@ namespace SGGEA
             this.confirmLogout.setCancelClickEvent(this.btnCancelarLogout_Click);
             this.confirmLogout.Visible = false;
             // 
+            // btnFunciones
+            // 
+            this.btnFunciones.AutoSize = true;
+            this.btnFunciones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.btnFunciones.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFunciones.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(163)))), ((int)(((byte)(163)))));
+            this.btnFunciones.Location = new System.Drawing.Point(51, 200);
+            this.btnFunciones.Name = "btnFunciones";
+            this.btnFunciones.Size = new System.Drawing.Size(76, 17);
+            this.btnFunciones.TabIndex = 11;
+            this.btnFunciones.Text = "Funciones";
+            this.btnFunciones.Visible = false;
+            // 
+            // btnCompGen
+            // 
+            this.btnCompGen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.btnCompGen.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.btnCompGen.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCompGen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(163)))), ((int)(((byte)(163)))));
+            this.btnCompGen.Location = new System.Drawing.Point(50, 250);
+            this.btnCompGen.Multiline = true;
+            this.btnCompGen.Name = "btnCompGen";
+            this.btnCompGen.ReadOnly = true;
+            this.btnCompGen.Size = new System.Drawing.Size(104, 37);
+            this.btnCompGen.TabIndex = 13;
+            this.btnCompGen.TabStop = false;
+            this.btnCompGen.Text = "Componentes Generadores";
+            this.btnCompGen.Visible = false;
+            // 
+            // btnBancos
+            // 
+            this.btnBancos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.btnBancos.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.btnBancos.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBancos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(163)))), ((int)(((byte)(163)))));
+            this.btnBancos.Location = new System.Drawing.Point(50, 313);
+            this.btnBancos.Multiline = true;
+            this.btnBancos.Name = "btnBancos";
+            this.btnBancos.ReadOnly = true;
+            this.btnBancos.Size = new System.Drawing.Size(132, 37);
+            this.btnBancos.TabIndex = 14;
+            this.btnBancos.TabStop = false;
+            this.btnBancos.Text = "Bancos de Almacenamiento";
+            this.btnBancos.Visible = false;
+            // 
+            // btnControlEnergia
+            // 
+            this.btnControlEnergia.AutoSize = true;
+            this.btnControlEnergia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.btnControlEnergia.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnControlEnergia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(163)))), ((int)(((byte)(163)))));
+            this.btnControlEnergia.Location = new System.Drawing.Point(51, 377);
+            this.btnControlEnergia.Name = "btnControlEnergia";
+            this.btnControlEnergia.Size = new System.Drawing.Size(129, 17);
+            this.btnControlEnergia.TabIndex = 15;
+            this.btnControlEnergia.Text = "Control de Energía";
+            this.btnControlEnergia.Visible = false;
+            // 
+            // btnProvisionEnergia
+            // 
+            this.btnProvisionEnergia.AutoSize = true;
+            this.btnProvisionEnergia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.btnProvisionEnergia.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProvisionEnergia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(163)))), ((int)(((byte)(163)))));
+            this.btnProvisionEnergia.Location = new System.Drawing.Point(51, 425);
+            this.btnProvisionEnergia.Name = "btnProvisionEnergia";
+            this.btnProvisionEnergia.Size = new System.Drawing.Size(142, 17);
+            this.btnProvisionEnergia.TabIndex = 16;
+            this.btnProvisionEnergia.Text = "Provisión de Energía";
+            this.btnProvisionEnergia.Visible = false;
+            // 
+            // btnConversionEnergia
+            // 
+            this.btnConversionEnergia.AutoSize = true;
+            this.btnConversionEnergia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.btnConversionEnergia.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConversionEnergia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(163)))), ((int)(((byte)(163)))));
+            this.btnConversionEnergia.Location = new System.Drawing.Point(51, 473);
+            this.btnConversionEnergia.Name = "btnConversionEnergia";
+            this.btnConversionEnergia.Size = new System.Drawing.Size(156, 17);
+            this.btnConversionEnergia.TabIndex = 17;
+            this.btnConversionEnergia.Text = "Conversión de Energía";
+            this.btnConversionEnergia.Visible = false;
+            // 
+            // btnBancosBateria
+            // 
+            this.btnBancosBateria.AutoSize = true;
+            this.btnBancosBateria.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.btnBancosBateria.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBancosBateria.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(163)))), ((int)(((byte)(163)))));
+            this.btnBancosBateria.Location = new System.Drawing.Point(51, 523);
+            this.btnBancosBateria.Name = "btnBancosBateria";
+            this.btnBancosBateria.Size = new System.Drawing.Size(128, 17);
+            this.btnBancosBateria.TabIndex = 18;
+            this.btnBancosBateria.Text = "Bancos de Batería";
+            this.btnBancosBateria.Visible = false;
+            // 
             // Principal
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::SGGEA.Properties.Resources.pantallaPrincipal;
             this.Controls.Add(this.confirmLogout);
+            this.Controls.Add(this.btnBancosBateria);
+            this.Controls.Add(this.btnConversionEnergia);
+            this.Controls.Add(this.btnProvisionEnergia);
+            this.Controls.Add(this.btnControlEnergia);
+            this.Controls.Add(this.btnBancos);
+            this.Controls.Add(this.btnCompGen);
+            this.Controls.Add(this.btnFunciones);
             this.Controls.Add(this.btnPerfilesUsuario);
             this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.imgMenu);
@@ -235,6 +346,8 @@ namespace SGGEA
             ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgMenu)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
@@ -252,5 +365,12 @@ namespace SGGEA
         private Label btnBitacoraFallas;
         private Label btnMetricas;
         private Label btnBitacoraAct;
+        private Label btnFunciones;
+        private TextBox btnCompGen;
+        private TextBox btnBancos;
+        private Label btnControlEnergia;
+        private Label btnProvisionEnergia;
+        private Label btnConversionEnergia;
+        private Label btnBancosBateria;
     }
 }

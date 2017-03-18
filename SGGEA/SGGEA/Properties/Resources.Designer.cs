@@ -143,6 +143,16 @@ namespace SGGEA.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap fondoMenu {
+            get {
+                object obj = ResourceManager.GetObject("fondoMenu", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap fondoPopup {
             get {
                 object obj = ResourceManager.GetObject("fondoPopup", resourceCulture);
@@ -166,16 +176,6 @@ namespace SGGEA.Properties {
         internal static System.Drawing.Bitmap LogIn {
             get {
                 object obj = ResourceManager.GetObject("LogIn", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap menu {
-            get {
-                object obj = ResourceManager.GetObject("menu", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

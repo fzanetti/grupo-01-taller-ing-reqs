@@ -160,10 +160,10 @@
     <Content Include="Resources\btnAtras.png" />
     <Content Include="Resources\btnMenu.png" />
     <Content Include="Resources\config-parametros.png" />
+    <Content Include="Resources\fondo-menu.png" />
     <Content Include="Resources\fondoPopup.png" />
     <Content Include="Resources\icono.ico" />
     <Content Include="Resources\logIn.png" />
-    <Content Include="Resources\menu.png" />
     <Content Include="Resources\metricas.png" />
     <Content Include="Resources\monitor.png" />
     <Content Include="Resources\orden-alimnetacion.png" />
