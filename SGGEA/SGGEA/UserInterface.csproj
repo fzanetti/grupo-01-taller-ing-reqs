@@ -154,12 +154,19 @@
     <Content Include="FodyWeavers.xml" />
     <Content Include="Resources\admin-usuarios-hover.png" />
     <Content Include="Resources\admin-usuarios.png" />
+    <Content Include="Resources\alertas.png" />
+    <Content Include="Resources\bitacora-act.png" />
+    <Content Include="Resources\bitacora-fallas.png" />
     <Content Include="Resources\btnAtras.png" />
     <Content Include="Resources\btnMenu.png" />
+    <Content Include="Resources\config-parametros.png" />
     <Content Include="Resources\fondoPopup.png" />
     <Content Include="Resources\icono.ico" />
     <Content Include="Resources\logIn.png" />
     <Content Include="Resources\menu.png" />
+    <Content Include="Resources\metricas.png" />
+    <Content Include="Resources\monitor.png" />
+    <Content Include="Resources\orden-alimnetacion.png" />
     <Content Include="Resources\pantalla-principal.png" />
     <Content Include="Resources\usuarios.png" />
   </ItemGroup>

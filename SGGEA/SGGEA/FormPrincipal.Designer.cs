@@ -6,7 +6,7 @@
         /// Variable del diseñador requerida.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
-        private System.ComponentModel.ComponentResourceManager resources= new System.ComponentModel.ComponentResourceManager(typeof(FormPrincipal));
+        
 
         /// <summary>
         /// Limpiar los recursos que se estén utilizando.
@@ -29,6 +29,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources= new System.ComponentModel.ComponentResourceManager(typeof(FormPrincipal));
             this.SuspendLayout();
             this.login = new SGGEA.Login();
             this.login.BackColor = System.Drawing.Color.White;
@@ -62,6 +63,7 @@
         
         public void InitializeLogin()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPrincipal));
             this.SuspendLayout();
             this.login = new SGGEA.Login();
             this.login.BackColor = System.Drawing.Color.White;
@@ -77,6 +79,7 @@
 
         public void InitializePrincipal()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPrincipal));
             this.SuspendLayout();
             this.principal = new SGGEA.Principal();
             this.principal.BackColor = System.Drawing.Color.White;

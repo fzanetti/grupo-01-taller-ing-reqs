@@ -7,7 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using SGGEA;
+using API.Controladores;
+
+
 
 namespace SGGEA
 {
@@ -16,21 +18,19 @@ namespace SGGEA
 
         private ILogin _login;
         
-        
-
         public Login()
         {
             InitializeComponent();
-            _login = new LoginService();
+            _login = LoginService.getInstancia();
             lblError.Text = Globals.ErrorLogin;
         }
 
         private void btnIniciarSesion_Click(object sender, EventArgs e)
         {
-            doLogin();
+            DoLogin();
         }
 
-        private void doLogin()
+        private void DoLogin()
         {
             if (String.IsNullOrEmpty(tbUsuario.Text))
             {
@@ -55,7 +55,7 @@ namespace SGGEA
             lblContrasenia.Visible = false;
             if (e.KeyChar == (char)13)
             {
-                doLogin();
+                DoLogin();
             }
         }
 

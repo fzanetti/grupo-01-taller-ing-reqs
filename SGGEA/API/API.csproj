@@ -40,11 +40,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Core\ILogin.cs" />
-    <Compile Include="Core\IPersistencia.cs" />
-    <Compile Include="Core\LoginService.cs" />
-    <Compile Include="Core\PersistenciaService.cs" />
-    <Compile Include="Domain\User.cs" />
+    <Compile Include="Controladores\Funciones.cs" />
+    <Compile Include="Controladores\Perfiles.cs" />
+    <Compile Include="Controladores\Usuarios.cs" />
+    <Compile Include="Controladores\ILogin.cs" />
+    <Compile Include="Persistencia\IPersistencia.cs" />
+    <Compile Include="Controladores\LoginService.cs" />
+    <Compile Include="Persistencia\PersistenciaService.cs" />
+    <Compile Include="Dominio\Funcion.cs" />
+    <Compile Include="Dominio\Perfil.cs" />
+    <Compile Include="Dominio\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -58,6 +63,9 @@
   <ItemGroup>
     <None Include="packages.config" />
     <EmbeddedResource Include="Resources\datos_de_usuarios.csv" />
+    <EmbeddedResource Include="Resources\datos_de_perfiles.csv" />
+    <EmbeddedResource Include="Resources\datos_de_usuarios_perfiles.csv" />
+    <EmbeddedResource Include="Resources\datos_de_perfiles_funciones.csv" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">

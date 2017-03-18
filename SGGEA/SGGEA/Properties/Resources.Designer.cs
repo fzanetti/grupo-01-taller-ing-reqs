@@ -83,6 +83,36 @@ namespace SGGEA.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap alertas {
+            get {
+                object obj = ResourceManager.GetObject("alertas", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bitacoraAct {
+            get {
+                object obj = ResourceManager.GetObject("bitacoraAct", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bitacoraFallas {
+            get {
+                object obj = ResourceManager.GetObject("bitacoraFallas", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap btnAtras {
             get {
                 object obj = ResourceManager.GetObject("btnAtras", resourceCulture);
@@ -96,6 +126,16 @@ namespace SGGEA.Properties {
         internal static System.Drawing.Bitmap btnMenu {
             get {
                 object obj = ResourceManager.GetObject("btnMenu", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap configParametros {
+            get {
+                object obj = ResourceManager.GetObject("configParametros", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -143,9 +183,39 @@ namespace SGGEA.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap pantalla_principal {
+        internal static System.Drawing.Bitmap metricas {
             get {
-                object obj = ResourceManager.GetObject("pantalla-principal", resourceCulture);
+                object obj = ResourceManager.GetObject("metricas", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap monitor {
+            get {
+                object obj = ResourceManager.GetObject("monitor", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ordenAlimnetacion {
+            get {
+                object obj = ResourceManager.GetObject("ordenAlimnetacion", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pantallaPrincipal {
+            get {
+                object obj = ResourceManager.GetObject("pantallaPrincipal", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
