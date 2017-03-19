@@ -11,5 +11,6 @@ namespace API.Persistencia
     {
         List<Usuario> ObtenerUsuarios();
         List<Perfil> ObtenerPerfiles();
+        Usuario ObtenerUsuario(string username);
     }
 }

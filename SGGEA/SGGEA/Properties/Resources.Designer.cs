@@ -93,6 +93,26 @@ namespace SGGEA.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap altaUsuario {
+            get {
+                object obj = ResourceManager.GetObject("altaUsuario", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap altaUsuarioHover {
+            get {
+                object obj = ResourceManager.GetObject("altaUsuarioHover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap bitacoraAct {
             get {
                 object obj = ResourceManager.GetObject("bitacoraAct", resourceCulture);
@@ -153,9 +173,39 @@ namespace SGGEA.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap fondoPantalla {
+            get {
+                object obj = ResourceManager.GetObject("fondoPantalla", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap fondoPopup {
             get {
                 object obj = ResourceManager.GetObject("fondoPopup", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fondoUsuario {
+            get {
+                object obj = ResourceManager.GetObject("fondoUsuario", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fondoUsuarioHover {
+            get {
+                object obj = ResourceManager.GetObject("fondoUsuarioHover", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -206,16 +256,6 @@ namespace SGGEA.Properties {
         internal static System.Drawing.Bitmap ordenAlimnetacion {
             get {
                 object obj = ResourceManager.GetObject("ordenAlimnetacion", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap pantallaPrincipal {
-            get {
-                object obj = ResourceManager.GetObject("pantallaPrincipal", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -127,11 +127,20 @@
   <data name="btnAtras" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\btnAtras.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="altaUsuario" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\alta-usuario.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="metricas" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\metricas.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="fondoPantalla" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fondo-pantalla.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="alertas" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\alertas.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="altaUsuarioHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\alta-usuario-hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="monitor" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\monitor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -141,6 +150,9 @@
   </data>
   <data name="ordenAlimnetacion" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\orden-alimnetacion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="fondoMenu" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fondo-menu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="fondoPopup" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\fondoPopup.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -157,13 +169,13 @@
   <data name="icono" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icono.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="pantallaPrincipal" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pantalla-principal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="fondoUsuario" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fondo-usuario.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="LogIn" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LogIn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="fondoMenu" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\fondo-menu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="fondoUsuarioHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fondo-usuario-hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

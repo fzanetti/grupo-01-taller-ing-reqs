@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using API.Dominio;
+using API.Persistencia;
 
 namespace API.Controladores
 {
@@ -17,6 +18,18 @@ namespace API.Controladores
                     return true;
             }
             return false;
+        }
+
+        public static List<Usuario> ObtenerUsuarios()
+        {
+             IPersistencia persistencia = new PersistenciaService();
+             return persistencia.ObtenerUsuarios();
+        }
+
+        public static Usuario ObtenerUsuario(string username)
+        {
+            IPersistencia persistencia = new PersistenciaService();
+            return persistencia.ObtenerUsuario(username);
         }
     }
 }

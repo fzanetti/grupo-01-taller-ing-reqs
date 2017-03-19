@@ -28,6 +28,8 @@ namespace SGGEA
             this.btnMetricas.Visible = _login.UsuarioPuedeAcceder(Funciones.Visualizacion_de_metricas_historicas_de_energia);
             this.btnMonitor.Visible = _login.UsuarioPuedeAcceder(Funciones.Monitoreo_de_red_de_energia);
             this.btnOrdenAlimentacion.Visible = _login.UsuarioPuedeAcceder(Funciones.Configuracion_de_orden_de_alimentacion_de_energia);
+            this.confirmLogout.setConfirmationClickEvent(this.btnConfirmarLogout_Click);
+            this.confirmLogout.setCancelClickEvent(this.btnCancelarLogout_Click);
         }
 
         private void btnAdminUsu_MouseEnter(object sender, EventArgs e)
@@ -42,7 +44,7 @@ namespace SGGEA
 
         private void btnAdminUsu_Click(object sender, EventArgs e)
         {
-          
+            FormPrincipal.getInstancia().InitializeAdminUsuarios();
         }
 
         private void btnLogout_MouseEnter(object sender, EventArgs e)
@@ -84,9 +86,8 @@ namespace SGGEA
         {
             if (!_menuActivo)
             {
-                this.btnMenu.BackgroundImage = global::SGGEA.Properties.Resources.btnAtras;
+                this.btnMenu.Image = global::SGGEA.Properties.Resources.btnAtras;
                 this.imgMenu.Visible = true;
-                this.btnPerfilesUsuario.Visible = true;
                 this.btnLogout.Visible = true;
                 this.btnPerfilesUsuario.Visible = _login.UsuarioPuedeAcceder(Funciones.Admin_de_Perfiles_de_usuario);
                 this.btnFunciones.Visible = _login.UsuarioPuedeAcceder(Funciones.Admin_de_Funciones);
@@ -109,7 +110,7 @@ namespace SGGEA
 
         private void EsconderMenu()
         {
-            this.btnMenu.BackgroundImage = global::SGGEA.Properties.Resources.btnMenu;
+            this.btnMenu.Image = global::SGGEA.Properties.Resources.btnMenu;
             this.imgMenu.Visible = false;
             this.btnPerfilesUsuario.Visible = false;
             this.btnFunciones.Visible = false;

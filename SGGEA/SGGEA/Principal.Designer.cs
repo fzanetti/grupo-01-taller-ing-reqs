@@ -30,7 +30,6 @@ namespace SGGEA
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Principal));
-            this.btnMenu = new System.Windows.Forms.PictureBox();
             this.imgMenu = new System.Windows.Forms.PictureBox();
             this.btnPerfilesUsuario = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
@@ -42,7 +41,6 @@ namespace SGGEA
             this.btnBitacoraFallas = new System.Windows.Forms.Label();
             this.btnMetricas = new System.Windows.Forms.Label();
             this.btnBitacoraAct = new System.Windows.Forms.Label();
-            this.confirmLogout = new SGGEA.UserControls.ConfirmationDialog();
             this.btnFunciones = new System.Windows.Forms.Label();
             this.btnCompGen = new System.Windows.Forms.TextBox();
             this.btnBancos = new System.Windows.Forms.TextBox();
@@ -50,20 +48,11 @@ namespace SGGEA
             this.btnProvisionEnergia = new System.Windows.Forms.Label();
             this.btnConversionEnergia = new System.Windows.Forms.Label();
             this.btnBancosBateria = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).BeginInit();
+            this.lblTitulo = new System.Windows.Forms.Label();
+            this.btnMenu = new System.Windows.Forms.Label();
+            this.confirmLogout = new SGGEA.UserControls.ConfirmationDialog();
             ((System.ComponentModel.ISupportInitialize)(this.imgMenu)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btnMenu
-            // 
-            this.btnMenu.BackColor = System.Drawing.Color.Transparent;
-            this.btnMenu.BackgroundImage = global::SGGEA.Properties.Resources.btnMenu;
-            this.btnMenu.Location = new System.Drawing.Point(27, 99);
-            this.btnMenu.Name = "btnMenu";
-            this.btnMenu.Size = new System.Drawing.Size(24, 24);
-            this.btnMenu.TabIndex = 6;
-            this.btnMenu.TabStop = false;
-            this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
             // 
             // imgMenu
             // 
@@ -199,26 +188,6 @@ namespace SGGEA
             this.btnBitacoraAct.TabIndex = 6;
             this.btnBitacoraAct.Visible = false;
             // 
-            // confirmLogout
-            // 
-            this.confirmLogout.BackColor = System.Drawing.Color.Transparent;
-            this.confirmLogout.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("confirmLogout.BackgroundImage")));
-            this.confirmLogout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.confirmLogout.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.confirmLogout.Location = new System.Drawing.Point(49, 267);
-            this.confirmLogout.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.confirmLogout.Name = "confirmLogout";
-            this.confirmLogout.PosicionBtnAceptar = System.Windows.Forms.DockStyle.Left;
-            this.confirmLogout.PosicionBtnCancelar = System.Windows.Forms.DockStyle.Right;
-            this.confirmLogout.Size = new System.Drawing.Size(310, 181);
-            this.confirmLogout.TabIndex = 9;
-            this.confirmLogout.TextoAceptar = "Aceptar";
-            this.confirmLogout.TextoCancelar = "Cancelar";
-            this.confirmLogout.TextoMensaje = "¿Seguro que desea salir?";
-            this.confirmLogout.setConfirmationClickEvent(this.btnConfirmarLogout_Click);
-            this.confirmLogout.setCancelClickEvent(this.btnCancelarLogout_Click);
-            this.confirmLogout.Visible = false;
-            // 
             // btnFunciones
             // 
             this.btnFunciones.AutoSize = true;
@@ -316,12 +285,54 @@ namespace SGGEA
             this.btnBancosBateria.Text = "Bancos de Batería";
             this.btnBancosBateria.Visible = false;
             // 
+            // lblTitulo
+            // 
+            this.lblTitulo.AutoSize = true;
+            this.lblTitulo.BackColor = System.Drawing.Color.Transparent;
+            this.lblTitulo.Font = new System.Drawing.Font("Calibri", 18F);
+            this.lblTitulo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(225)))), ((int)(((byte)(243)))));
+            this.lblTitulo.Location = new System.Drawing.Point(54, 94);
+            this.lblTitulo.Name = "lblTitulo";
+            this.lblTitulo.Size = new System.Drawing.Size(67, 29);
+            this.lblTitulo.TabIndex = 19;
+            this.lblTitulo.Text = "Inicio";
+            // 
+            // btnMenu
+            // 
+            this.btnMenu.BackColor = System.Drawing.Color.Transparent;
+            this.btnMenu.Image = global::SGGEA.Properties.Resources.btnMenu;
+            this.btnMenu.Location = new System.Drawing.Point(27, 99);
+            this.btnMenu.Name = "btnMenu";
+            this.btnMenu.Size = new System.Drawing.Size(24, 24);
+            this.btnMenu.TabIndex = 23;
+            this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
+            // 
+            // confirmLogout
+            // 
+            this.confirmLogout.BackColor = System.Drawing.Color.Transparent;
+            this.confirmLogout.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("confirmLogout.BackgroundImage")));
+            this.confirmLogout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.confirmLogout.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.confirmLogout.Location = new System.Drawing.Point(49, 267);
+            this.confirmLogout.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.confirmLogout.Name = "confirmLogout";
+            this.confirmLogout.PosicionBtnAceptar = System.Windows.Forms.DockStyle.Left;
+            this.confirmLogout.PosicionBtnCancelar = System.Windows.Forms.DockStyle.Right;
+            this.confirmLogout.Size = new System.Drawing.Size(310, 181);
+            this.confirmLogout.TabIndex = 9;
+            this.confirmLogout.TextoAceptar = "Aceptar";
+            this.confirmLogout.TextoCancelar = "Cancelar";
+            this.confirmLogout.TextoMensaje = "¿Seguro que desea salir?";
+            this.confirmLogout.Visible = false;
+            // 
             // Principal
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
-            this.BackgroundImage = global::SGGEA.Properties.Resources.pantallaPrincipal;
+            this.BackgroundImage = global::SGGEA.Properties.Resources.fondoPantalla;
             this.Controls.Add(this.confirmLogout);
+            this.Controls.Add(this.btnMenu);
+            this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.btnBancosBateria);
             this.Controls.Add(this.btnConversionEnergia);
             this.Controls.Add(this.btnProvisionEnergia);
@@ -332,7 +343,6 @@ namespace SGGEA
             this.Controls.Add(this.btnPerfilesUsuario);
             this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.imgMenu);
-            this.Controls.Add(this.btnMenu);
             this.Controls.Add(this.btnBitacoraAct);
             this.Controls.Add(this.btnMetricas);
             this.Controls.Add(this.btnBitacoraFallas);
@@ -343,7 +353,6 @@ namespace SGGEA
             this.Controls.Add(this.btnMonitor);
             this.Name = "Principal";
             this.Size = new System.Drawing.Size(404, 800);
-            ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgMenu)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -353,7 +362,6 @@ namespace SGGEA
         #endregion
 
         private System.Windows.Forms.PictureBox imgMenu;
-        private System.Windows.Forms.PictureBox btnMenu;
         private UserControls.ConfirmationDialog confirmLogout;
         private Button btnPerfilesUsuario;
         private Button btnLogout;
@@ -372,5 +380,7 @@ namespace SGGEA
         private Label btnProvisionEnergia;
         private Label btnConversionEnergia;
         private Label btnBancosBateria;
+        private Label lblTitulo;
+        private Label btnMenu;
     }
 }

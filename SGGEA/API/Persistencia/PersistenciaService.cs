@@ -33,6 +33,12 @@ namespace API.Persistencia
             return usuarios;
         }
 
+        public Usuario ObtenerUsuario(string username)
+        {
+            List<Usuario> usuarios = ObtenerUsuarios();
+            return usuarios.Find(usr => usr.Username.Equals(username));
+        }
+
         public List<Perfil> ObtenerPerfiles()
         {
             List<Perfil> perfiles = new List<Perfil>();
@@ -100,18 +106,29 @@ namespace API.Persistencia
         private Usuario ParsearUsuario(string linea)
         {
             Usuario user = new Usuario();
-
+            //usuario1;password1;nombre1;apellido1;email1;planta1;ubicación física1;departamento1;cargo1 
             string[] tokens = linea.Split(';');
 
             if (string.IsNullOrEmpty(tokens[0]))
                 return null; //No fue posible parsear el username
-
             user.Username = tokens[0];
 
             if (string.IsNullOrEmpty(tokens[1]))
                 return null;//No fue posible parsear la password
-
             user.Password = tokens[1];
+
+            if (string.IsNullOrEmpty(tokens[2]))
+                return null;
+            user.Nombre = tokens[2];
+
+            if (string.IsNullOrEmpty(tokens[3]))
+                return null;
+            user.Apellido = tokens[3];
+
+            if (string.IsNullOrEmpty(tokens[4]))
+                return null;
+            user.Email = tokens[4];
+
 
             return user;
         }
