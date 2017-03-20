@@ -10,35 +10,103 @@ using System.Windows.Forms;
 
 namespace SGGEA.UserControls
 {
-    public partial class CustomTextBox : TextBox
+    public partial class CustomTextBox : UserControl
     {
-        private Boolean firstTime = true;
-        private Font fontRegular = new Font("Arial", 14.25F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
 
         public CustomTextBox()
         {
             InitializeComponent();
-            BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(226)))), ((int)(((byte)(228)))));
-            BorderStyle = BorderStyle.None;
-            Font = new Font("Arial", 14.25F, FontStyle.Italic, GraphicsUnit.Point, ((byte)(0)));
-            Size = new Size(175, 22);
-            KeyPress += new KeyPressEventHandler(this.customTextBox_KeyPress);
-            Enter += new EventHandler(this.customTextBox_Enter);
         }
 
-        private void customTextBox_KeyPress(object sender, EventArgs e)
+        [Description("Texto del Campo"), Category("TextoCampo")]
+        public string TextoCampo
         {
-            if (firstTime)
+            get { return tbCampo.Text; }
+            set { tbCampo.Text = value; }
+        }
+
+        [Description("Texto del mensaje de error"), Category("TextoError")]
+        public string TextoError
+        {
+            get { return lblError.Text; }
+            set { lblError.Text = value; }
+        }
+
+        [Description("Título del campo"), Category("TituloCampo")]
+        public string TituloCampo
+        {
+            get { return lblCampo.Text; }
+            set { lblCampo.Text = value; }
+        }
+
+        [Description("Ofusca el texo si el campo es contraseña"), Category("EsPassword")]
+        public bool EsPassword
+        {
+            get { return tbCampo.UseSystemPasswordChar; }
+            set { tbCampo.UseSystemPasswordChar = value; }
+        }
+
+        [Description("Font del Campo"), Category("FontCampo")]
+        public Font FontCampo
+        {
+            get { return tbCampo.Font; }
+            set { tbCampo.Font = value; }
+        }
+
+        [Description("Font del Título"), Category("FontTitulo")]
+        public Font FontTitulo
+        {
+            get { return lblCampo.Font; }
+            set { lblCampo.Font = value; }
+        }
+
+        [Description("Font del Error"), Category("FontError")]
+        public Font FontError
+        {
+            get { return lblError.Font; }
+            set { lblError.Font = value; }
+        }
+
+        [Description("Color de Fondo"), Category("ColorDeFondo")]
+        public Color ColorDeFondo
+        {
+            get { return lblCampo.BackColor; }
+            set { lblCampo.BackColor = tbCampo.BackColor = value; }
+        }
+
+        [Description("Ancho del campo"), Category("AnchoCampo")]
+        public int AnchoCampo
+        {
+            get { return  tbCampo.Size.Width; }
+            set {tbCampo.Size = lblError.Size= new System.Drawing.Size(value, tbCampo.Size.Height);}
+        }
+
+        public delegate void FuncionDelEvento(object sender, KeyPressEventArgs e);
+        public void setKeyPressEvent(FuncionDelEvento f)
+        {
+            this.tbCampo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(f);
+        }
+
+        private void tbCampo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            string txt = tbCampo.Text;
+            if (e.KeyChar != (char)Keys.Back)
             {
-                firstTime = false;
-                Text = "";
-                Font = fontRegular;
+                txt+=e.KeyChar;
             }
+            else if (!String.IsNullOrEmpty(txt))
+            {
+                txt = txt.Substring(0, txt.Length - 1);
+            }
+            lblCampo.Visible = String.IsNullOrEmpty(txt.Trim());       
         }
 
-        private void customTextBox_Enter(object sender, EventArgs e)
+        private void lblCampo_Click(object sender, EventArgs e)
         {
-            Select(0, 0);
+            lblCampo.Focus();
+            this.ActiveControl = tbCampo;
         }
+
+
     }
 }

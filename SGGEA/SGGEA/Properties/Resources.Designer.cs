@@ -93,6 +93,16 @@ namespace SGGEA.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap alta_de_usuario {
+            get {
+                object obj = ResourceManager.GetObject("alta_de_usuario", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap altaUsuario {
             get {
                 object obj = ResourceManager.GetObject("altaUsuario", resourceCulture);
@@ -153,6 +163,26 @@ namespace SGGEA.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap checkBox {
+            get {
+                object obj = ResourceManager.GetObject("checkBox", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap checkBoxChequed {
+            get {
+                object obj = ResourceManager.GetObject("checkBoxChequed", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap configParametros {
             get {
                 object obj = ResourceManager.GetObject("configParametros", resourceCulture);
@@ -186,6 +216,36 @@ namespace SGGEA.Properties {
         internal static System.Drawing.Bitmap fondoPopup {
             get {
                 object obj = ResourceManager.GetObject("fondoPopup", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fondoSelPerfiles {
+            get {
+                object obj = ResourceManager.GetObject("fondoSelPerfiles", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fondoTextBox {
+            get {
+                object obj = ResourceManager.GetObject("fondoTextBox", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fondoToast {
+            get {
+                object obj = ResourceManager.GetObject("fondoToast", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

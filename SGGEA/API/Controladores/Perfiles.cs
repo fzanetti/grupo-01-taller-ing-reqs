@@ -1,4 +1,6 @@
-﻿using System;
+﻿using API.Dominio;
+using API.Persistencia;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +10,10 @@ namespace API.Controladores
 {
     public class Perfiles
     {
-
+        public static List<Perfil> ObtenerPerfiles()
+        {
+            IPersistencia persistencia = new PersistenciaService();
+            return persistencia.ObtenerPerfiles();
+        }
     }
 }

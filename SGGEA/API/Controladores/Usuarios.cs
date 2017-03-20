@@ -31,5 +31,13 @@ namespace API.Controladores
             IPersistencia persistencia = new PersistenciaService();
             return persistencia.ObtenerUsuario(username);
         }
+
+        ///<summary>
+        ///<para>Da de alta un nuevo usuario. Si el username ya esta registrado devuelve false en caso contrario devuelve true.</para>
+        ///</summary>
+        public static bool AltaUsuario(Usuario usuario)
+        {
+            return false;
+        }
     }
 }

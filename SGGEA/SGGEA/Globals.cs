@@ -13,6 +13,10 @@ namespace SGGEA
         public static Color ColorFondoBotonHover = Color.FromArgb(129, 177, 203);
 
         public static string ErrorLogin = "Usuario o contraseña inválidos";
-    
+        public static string ErrorCampoObl = "Campo Obligatorio";
+        public static string ErrorUsernameRegistrado = "Nombre usuario ya registrado";
+        public static string ErrorSelPerfiles = "Debe seleccionar al menos un perfil";
+        public static string AltaUsuarioOk = "Se ha agregado el usuario exitosamente";
+
     }
 }

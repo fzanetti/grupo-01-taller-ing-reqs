@@ -91,7 +91,7 @@
       <DependentUpon>CustomButton.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\CustomTextBox.cs">
-      <SubType>Component</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserControls\CustomTextBox.Designer.cs">
       <DependentUpon>CustomTextBox.cs</DependentUpon>
@@ -107,6 +107,18 @@
     </Compile>
     <Compile Include="UserControls\ConfirmationDialog.Designer.cs">
       <DependentUpon>ConfirmationDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SelPerfil.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\SelPerfil.Designer.cs">
+      <DependentUpon>SelPerfil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Toast.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Toast.Designer.cs">
+      <DependentUpon>Toast.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\User.cs">
       <SubType>UserControl</SubType>
@@ -154,6 +166,15 @@
     <EmbeddedResource Include="UserControls\ConfirmationDialog.resx">
       <DependentUpon>ConfirmationDialog.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\CustomTextBox.resx">
+      <DependentUpon>CustomTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\SelPerfil.resx">
+      <DependentUpon>SelPerfil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Toast.resx">
+      <DependentUpon>Toast.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\User.resx">
       <DependentUpon>User.cs</DependentUpon>
     </EmbeddedResource>
@@ -193,13 +214,19 @@
     <Content Include="Resources\alertas.png" />
     <Content Include="Resources\alta-usuario-hover.png" />
     <Content Include="Resources\alta-usuario.png" />
+    <Content Include="Resources\alta_de_usuario.png" />
     <Content Include="Resources\bitacora-act.png" />
     <Content Include="Resources\bitacora-fallas.png" />
     <Content Include="Resources\btnAtras.png" />
     <Content Include="Resources\btnMenu.png" />
+    <Content Include="Resources\checkBox.png" />
+    <Content Include="Resources\checkBoxChequed.png" />
     <Content Include="Resources\config-parametros.png" />
     <Content Include="Resources\fondo-menu.png" />
     <Content Include="Resources\fondo-pantalla.png" />
+    <Content Include="Resources\fondo-selperfiles.png" />
+    <Content Include="Resources\fondo-text-box.png" />
+    <Content Include="Resources\fondo-toast.png" />
     <Content Include="Resources\fondo-usuario-hover.png" />
     <Content Include="Resources\fondo-usuario.png" />
     <Content Include="Resources\fondoPopup.png" />

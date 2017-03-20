@@ -21,8 +21,8 @@ namespace SGGEA
         public Login()
         {
             InitializeComponent();
+            campoPassword.setKeyPressEvent(campoPassword_KeyPress);
             _login = LoginService.getInstancia();
-            lblError.Text = Globals.ErrorLogin;
         }
 
         private void btnIniciarSesion_Click(object sender, EventArgs e)
@@ -32,17 +32,17 @@ namespace SGGEA
 
         private void DoLogin()
         {
-            if (String.IsNullOrEmpty(tbUsuario.Text))
+            if (String.IsNullOrEmpty(campoUsername.TextoCampo))
             {
-                lblError.Visible = true;
+                campoPassword.TextoError=Globals.ErrorLogin;
             }
-            else if (String.IsNullOrEmpty(tbContrasenia.Text))
+            else if (String.IsNullOrEmpty(campoPassword.TextoCampo))
             {
-                lblError.Visible = true;
+                campoPassword.TextoError = Globals.ErrorLogin;
             }
-            else if (!_login.ValidarLogin(tbUsuario.Text, tbContrasenia.Text))
+            else if (!_login.ValidarLogin(campoUsername.TextoCampo, campoPassword.TextoCampo))
             {
-                lblError.Visible = true;
+                campoPassword.TextoError = Globals.ErrorLogin;
             }
             else
             {
@@ -50,20 +50,12 @@ namespace SGGEA
             }
         }
 
-        private void tbContrasenia_KeyPress(object sender, KeyPressEventArgs e)
+        private void campoPassword_KeyPress(object sender, KeyPressEventArgs e)
         {
-            lblContrasenia.Visible = false;
             if (e.KeyChar == (char)13)
             {
                 DoLogin();
             }
         }
-
-        private void lblContrasenia_Click(object sender, EventArgs e)
-        {
-            this.ActiveControl = tbContrasenia;
-        }
-
-     
     }
 }

@@ -17,4 +17,3 @@ C:\Users\Fernando Zanetti\Documents\Obligatorio Taller Ing. Req\grupo-01-taller-
 C:\Users\Fernando Zanetti\Documents\Obligatorio Taller Ing. Req\grupo-01-taller-ing-reqs\SGGEA\API\obj\Debug\API.csproj.GenerateResource.Cache
 C:\Users\Fernando Zanetti\Documents\Obligatorio Taller Ing. Req\grupo-01-taller-ing-reqs\SGGEA\API\obj\Debug\API.dll
 C:\Users\Fernando Zanetti\Documents\Obligatorio Taller Ing. Req\grupo-01-taller-ing-reqs\SGGEA\API\obj\Debug\API.pdb
-C:\Users\Fernando Zanetti\Documents\Obligatorio Taller Ing. Req\grupo-01-taller-ing-reqs\SGGEA\API\obj\Debug\API.csprojResolveAssemblyReference.cache

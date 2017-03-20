@@ -12,7 +12,7 @@ namespace API.Controladores
         bool ValidarLogin(string username, string password);
 
         ///<summary>
-        ///Devuelve true si el usuario logueado puede acceder a una funcionalidad dada.
+        ///<para>Devuelve true si el usuario logueado puede acceder a una funcionalidad dada.</para>
         ///</summary
         bool UsuarioPuedeAcceder(Funcion funcion);
 

@@ -28,60 +28,49 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblContrasenia = new System.Windows.Forms.Label();
-            this.tbContrasenia = new SGGEA.UserControls.CustomTextBox();
-            this.lblError = new SGGEA.UserControls.LabelError();
-            this.tbUsuario = new SGGEA.UserControls.CustomTextBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
+            this.campoPassword = new SGGEA.UserControls.CustomTextBox();
+            this.campoUsername = new SGGEA.UserControls.CustomTextBox();
             this.btnIniciarSesion = new SGGEA.UserControls.CustomButton();
             this.SuspendLayout();
             // 
-            // lblContrasenia
+            // campoPassword
             // 
-            this.lblContrasenia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(226)))), ((int)(((byte)(228)))));
-            this.lblContrasenia.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.lblContrasenia.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblContrasenia.Location = new System.Drawing.Point(114, 301);
-            this.lblContrasenia.Name = "lblContrasenia";
-            this.lblContrasenia.Size = new System.Drawing.Size(112, 23);
-            this.lblContrasenia.TabIndex = 5;
-            this.lblContrasenia.Text = "Contraseña";
-            this.lblContrasenia.Click += new System.EventHandler(this.lblContrasenia_Click);
+            this.campoPassword.AnchoCampo = 190;
+            this.campoPassword.BackColor = System.Drawing.Color.Transparent;
+            this.campoPassword.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("campoPassword.BackgroundImage")));
+            this.campoPassword.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.campoPassword.ColorDeFondo = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(226)))), ((int)(((byte)(228)))));
+            this.campoPassword.EsPassword = true;
+            this.campoPassword.FontCampo = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.campoPassword.FontError = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.campoPassword.FontTitulo = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.campoPassword.Location = new System.Drawing.Point(102, 301);
+            this.campoPassword.Name = "campoPassword";
+            this.campoPassword.Size = new System.Drawing.Size(195, 48);
+            this.campoPassword.TabIndex = 2;
+            this.campoPassword.TextoCampo = "";
+            this.campoPassword.TextoError = "";
+            this.campoPassword.TituloCampo = "Contraseña";
             // 
-            // tbContrasenia
+            // campoUsername
             // 
-            this.tbContrasenia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(226)))), ((int)(((byte)(228)))));
-            this.tbContrasenia.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tbContrasenia.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbContrasenia.Location = new System.Drawing.Point(113, 302);
-            this.tbContrasenia.Name = "tbContrasenia";
-            this.tbContrasenia.Size = new System.Drawing.Size(175, 22);
-            this.tbContrasenia.TabIndex = 2;
-            this.tbContrasenia.UseSystemPasswordChar = true;
-            this.tbContrasenia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbContrasenia_KeyPress);
-            // 
-            // lblError
-            // 
-            this.lblError.AutoSize = true;
-            this.lblError.BackColor = System.Drawing.Color.Transparent;
-            this.lblError.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblError.ForeColor = System.Drawing.Color.Red;
-            this.lblError.Location = new System.Drawing.Point(108, 330);
-            this.lblError.Name = "lblError";
-            this.lblError.Size = new System.Drawing.Size(36, 16);
-            this.lblError.TabIndex = 4;
-            this.lblError.Text = "Error";
-            this.lblError.Visible = false;
-            // 
-            // tbUsuario
-            // 
-            this.tbUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(226)))), ((int)(((byte)(228)))));
-            this.tbUsuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tbUsuario.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbUsuario.Location = new System.Drawing.Point(114, 233);
-            this.tbUsuario.Name = "tbUsuario";
-            this.tbUsuario.Size = new System.Drawing.Size(175, 22);
-            this.tbUsuario.TabIndex = 1;
-            this.tbUsuario.Text = " Nombre de usuario";
+            this.campoUsername.AnchoCampo = 190;
+            this.campoUsername.BackColor = System.Drawing.Color.Transparent;
+            this.campoUsername.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("campoUsername.BackgroundImage")));
+            this.campoUsername.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.campoUsername.ColorDeFondo = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(226)))), ((int)(((byte)(228)))));
+            this.campoUsername.EsPassword = false;
+            this.campoUsername.FontCampo = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.campoUsername.FontError = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.campoUsername.FontTitulo = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.campoUsername.Location = new System.Drawing.Point(102, 232);
+            this.campoUsername.Name = "campoUsername";
+            this.campoUsername.Size = new System.Drawing.Size(195, 48);
+            this.campoUsername.TabIndex = 1;
+            this.campoUsername.TextoCampo = "";
+            this.campoUsername.TextoError = "";
+            this.campoUsername.TituloCampo = "Nombre de usuario";
             // 
             // btnIniciarSesion
             // 
@@ -102,25 +91,20 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
-            this.BackgroundImage = global::SGGEA.Properties.Resources.LogIn;
-            this.Controls.Add(this.lblContrasenia);
-            this.Controls.Add(this.tbContrasenia);
-            this.Controls.Add(this.lblError);
-            this.Controls.Add(this.tbUsuario);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.Controls.Add(this.campoPassword);
+            this.Controls.Add(this.campoUsername);
             this.Controls.Add(this.btnIniciarSesion);
             this.Name = "Login";
             this.Size = new System.Drawing.Size(404, 800);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         private UserControls.CustomButton btnIniciarSesion;
-        private UserControls.CustomTextBox tbUsuario;
-        private UserControls.LabelError lblError;
-        private System.Windows.Forms.Label lblContrasenia;
-        private UserControls.CustomTextBox tbContrasenia;
+        private UserControls.CustomTextBox campoUsername;
+        private UserControls.CustomTextBox campoPassword;
     }
 }
