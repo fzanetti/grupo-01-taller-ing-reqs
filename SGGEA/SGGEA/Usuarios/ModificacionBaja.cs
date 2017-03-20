@@ -11,11 +11,11 @@ using API.Dominio;
 
 namespace SGGEA.Usuarios
 {
-    public partial class ModificacionUsuario : UserControl
+    public partial class ModificacionBaja : UserControl
     {
         private Usuario _usuario;
 
-        public ModificacionUsuario(string username)
+        public ModificacionBaja(string username)
         {
             this._usuario = API.Controladores.Usuarios.ObtenerUsuario(username);
             InitializeComponent();

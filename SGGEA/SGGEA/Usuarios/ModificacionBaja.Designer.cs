@@ -1,6 +1,6 @@
 ﻿namespace SGGEA.Usuarios
 {
-    partial class ModificacionUsuario
+    partial class ModificacionBaja
     {
         /// <summary> 
         /// Variable del diseñador requerida.

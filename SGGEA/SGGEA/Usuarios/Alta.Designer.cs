@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 namespace SGGEA.Usuarios
 {
-    partial class AltaUsuario
+    partial class Alta
     {
         /// <summary> 
         /// Variable del diseñador requerida.
@@ -29,7 +29,7 @@ namespace SGGEA.Usuarios
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AltaUsuario));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Alta));
             this.btnAtras = new System.Windows.Forms.Label();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.panelPerfiles = new System.Windows.Forms.Panel();
@@ -136,8 +136,8 @@ namespace SGGEA.Usuarios
             this.campoPassword.Name = "campoPassword";
             this.campoPassword.Size = new System.Drawing.Size(256, 45);
             this.campoPassword.TabIndex = 2;
-            this.campoPassword.TextoCampo = "";
-            this.campoPassword.TextoError = "";
+            this.campoPassword.TextoCampo = System.String.Empty;
+            this.campoPassword.TextoError = System.String.Empty;
             this.campoPassword.TituloCampo = "Contraseña";
             // 
             // campoCargo
@@ -155,8 +155,8 @@ namespace SGGEA.Usuarios
             this.campoCargo.Name = "campoCargo";
             this.campoCargo.Size = new System.Drawing.Size(256, 45);
             this.campoCargo.TabIndex = 9;
-            this.campoCargo.TextoCampo = "";
-            this.campoCargo.TextoError = "";
+            this.campoCargo.TextoCampo = System.String.Empty;
+            this.campoCargo.TextoError = System.String.Empty;
             this.campoCargo.TituloCampo = "Cargo";
             // 
             // campoDto
@@ -174,8 +174,8 @@ namespace SGGEA.Usuarios
             this.campoDto.Name = "campoDto";
             this.campoDto.Size = new System.Drawing.Size(256, 45);
             this.campoDto.TabIndex = 8;
-            this.campoDto.TextoCampo = "";
-            this.campoDto.TextoError = "";
+            this.campoDto.TextoCampo = System.String.Empty;
+            this.campoDto.TextoError = System.String.Empty;
             this.campoDto.TituloCampo = "Departamento";
             // 
             // campoUbicacion
@@ -193,8 +193,8 @@ namespace SGGEA.Usuarios
             this.campoUbicacion.Name = "campoUbicacion";
             this.campoUbicacion.Size = new System.Drawing.Size(256, 45);
             this.campoUbicacion.TabIndex = 7;
-            this.campoUbicacion.TextoCampo = "";
-            this.campoUbicacion.TextoError = "";
+            this.campoUbicacion.TextoCampo = System.String.Empty;
+            this.campoUbicacion.TextoError = System.String.Empty;
             this.campoUbicacion.TituloCampo = "Ubicación física";
             // 
             // campoPlanta
@@ -212,8 +212,8 @@ namespace SGGEA.Usuarios
             this.campoPlanta.Name = "campoPlanta";
             this.campoPlanta.Size = new System.Drawing.Size(256, 45);
             this.campoPlanta.TabIndex = 6;
-            this.campoPlanta.TextoCampo = "";
-            this.campoPlanta.TextoError = "";
+            this.campoPlanta.TextoCampo = System.String.Empty;
+            this.campoPlanta.TextoError = System.String.Empty;
             this.campoPlanta.TituloCampo = "Planta";
             // 
             // campoEmail
@@ -231,8 +231,8 @@ namespace SGGEA.Usuarios
             this.campoEmail.Name = "campoEmail";
             this.campoEmail.Size = new System.Drawing.Size(256, 45);
             this.campoEmail.TabIndex = 5;
-            this.campoEmail.TextoCampo = "";
-            this.campoEmail.TextoError = "";
+            this.campoEmail.TextoCampo = System.String.Empty;
+            this.campoEmail.TextoError = System.String.Empty;
             this.campoEmail.TituloCampo = "Email";
             // 
             // campoApellido
@@ -250,8 +250,8 @@ namespace SGGEA.Usuarios
             this.campoApellido.Name = "campoApellido";
             this.campoApellido.Size = new System.Drawing.Size(256, 45);
             this.campoApellido.TabIndex = 4;
-            this.campoApellido.TextoCampo = "";
-            this.campoApellido.TextoError = "";
+            this.campoApellido.TextoCampo = System.String.Empty;
+            this.campoApellido.TextoError = System.String.Empty;
             this.campoApellido.TituloCampo = "Apellido";
             // 
             // campoNombre
@@ -269,8 +269,8 @@ namespace SGGEA.Usuarios
             this.campoNombre.Name = "campoNombre";
             this.campoNombre.Size = new System.Drawing.Size(256, 45);
             this.campoNombre.TabIndex = 3;
-            this.campoNombre.TextoCampo = "";
-            this.campoNombre.TextoError = "";
+            this.campoNombre.TextoCampo = System.String.Empty;
+            this.campoNombre.TextoError = System.String.Empty;
             this.campoNombre.TituloCampo = "Nombre";
             // 
             // campoUsername
@@ -288,8 +288,8 @@ namespace SGGEA.Usuarios
             this.campoUsername.Name = "campoUsername";
             this.campoUsername.Size = new System.Drawing.Size(256, 45);
             this.campoUsername.TabIndex = 1;
-            this.campoUsername.TextoCampo = "";
-            this.campoUsername.TextoError = "";
+            this.campoUsername.TextoCampo = System.String.Empty;
+            this.campoUsername.TextoError = System.String.Empty;
             this.campoUsername.TituloCampo = "Nombre de usuario";
             // 
             // btnSelPerfiles
@@ -358,7 +358,7 @@ namespace SGGEA.Usuarios
             timer.Start();
         
             toast = new SGGEA.UserControls.Toast();
-            ComponentResourceManager resources = new ComponentResourceManager(typeof(AltaUsuario));
+            ComponentResourceManager resources = new ComponentResourceManager(typeof(Alta));
             this.SuspendLayout();
             toast.BackColor = System.Drawing.Color.Transparent;
             toast.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("toast.BackgroundImage")));
@@ -427,13 +427,14 @@ namespace SGGEA.Usuarios
             this.flowLayoutPerfiles.ResumeLayout(false);
             this.ResumeLayout(false);
         }
-
+   
         #endregion
 
         private void timer_Tick(object sender, System.EventArgs e)
         {
             timer.Stop(); //If timer is not stopped, timer1_Tick event will be called for every 10 seconds
             Controls.Remove(toast);
+            FormPrincipal.getInstancia().InitializeAdminUsuarios();
         }
 
         private System.Windows.Forms.Timer timer; 

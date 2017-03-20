@@ -15,10 +15,9 @@ namespace API.Dominio
         public string Apellido { get; set; }
         public string Email { get; set; }
         public string Planta { get; set; }
-        public string Ubicacion { get; set; }
+        public string UbicacionFisica { get; set; }
         public string Departamento { get; set; }
         public string Cargo { get; set; }
         public List<Perfil> Perfiles { get; set; }
-        public string UbicacionFisica { get; set; }
     }
 }

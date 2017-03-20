@@ -2,7 +2,7 @@
 using SGGEA.UserControls;
 namespace SGGEA.Usuarios
 {
-    partial class AdminUsuarios
+    partial class Admin
     {
         /// <summary> 
         /// Variable del diseñador requerida.
@@ -30,7 +30,7 @@ namespace SGGEA.Usuarios
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminUsuarios));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Admin));
             this.lblTitulo = new System.Windows.Forms.Label();
             this.btnAtras = new System.Windows.Forms.Label();
             this.flowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();

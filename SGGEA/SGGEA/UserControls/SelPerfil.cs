@@ -13,7 +13,7 @@ namespace SGGEA.UserControls
 {
     public partial class SelPerfil : UserControl
     {
-        private bool _selected = false;
+        private bool _seleccionado=false;
         private Perfil _perfil;
 
         public SelPerfil(Perfil perfil)
@@ -27,23 +27,27 @@ namespace SGGEA.UserControls
         {
             return _perfil;
         }
-    
-        public bool Seleccionado()
+
+        public bool Seleccionado
         {
-            return _selected; 
+            get { return _seleccionado;}
+            set
+            {
+                _seleccionado = value;
+                if (_seleccionado)
+                {
+                    this.btnPerfil.BackgroundImage = global::SGGEA.Properties.Resources.checkBoxChequed;
+                }
+                else
+                {
+                    this.btnPerfil.BackgroundImage = global::SGGEA.Properties.Resources.checkBox;
+                }
+            }
         }
 
         private void btnPerfil_Click(object sender, EventArgs e)
         {
-            if (!_selected)
-            {
-                 this.btnPerfil.BackgroundImage = global::SGGEA.Properties.Resources.checkBoxChequed;              
-            }else{
-                this.btnPerfil.BackgroundImage = global::SGGEA.Properties.Resources.checkBox;
-            }
-            _selected = !_selected;
+            Seleccionado = !Seleccionado;
         }
-
-
     }
 }

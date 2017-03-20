@@ -98,7 +98,7 @@ namespace SGGEA
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPrincipal));
             this.SuspendLayout();
-            this.adminUsuarios = new AdminUsuarios();
+            this.adminUsuarios = new Admin();
             this.adminUsuarios.BackColor = System.Drawing.Color.White;
             this.adminUsuarios.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("principal.BackgroundImage")));
             this.adminUsuarios.Location = new System.Drawing.Point(0, 0);
@@ -114,7 +114,7 @@ namespace SGGEA
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPrincipal));
             this.SuspendLayout();
-            this.altaUsuario = new AltaUsuario();
+            this.altaUsuario = new Alta();
             this.altaUsuario.BackColor = System.Drawing.Color.White;
             this.altaUsuario.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("principal.BackgroundImage")));
             this.altaUsuario.Location = new System.Drawing.Point(0, 0);
@@ -130,7 +130,7 @@ namespace SGGEA
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPrincipal));
             this.SuspendLayout();
-            this.modifUsuario = new ModificacionUsuario(username);
+            this.modifUsuario = new ModificacionBaja(username);
             this.modifUsuario.BackColor = System.Drawing.Color.White;
             this.modifUsuario.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("principal.BackgroundImage")));
             this.modifUsuario.Location = new System.Drawing.Point(0, 0);
@@ -147,9 +147,9 @@ namespace SGGEA
 
         private Login login;
         private Principal principal;
-        private AdminUsuarios adminUsuarios;
-        private AltaUsuario altaUsuario;
-        private ModificacionUsuario modifUsuario;
+        private Admin adminUsuarios;
+        private Alta altaUsuario;
+        private ModificacionBaja modifUsuario;
 
 
 

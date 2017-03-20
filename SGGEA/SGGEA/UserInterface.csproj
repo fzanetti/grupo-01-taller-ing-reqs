@@ -126,23 +126,23 @@
     <Compile Include="UserControls\User.Designer.cs">
       <DependentUpon>User.cs</DependentUpon>
     </Compile>
-    <Compile Include="Usuarios\AdminUsuarios.cs">
+    <Compile Include="Usuarios\Admin.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Usuarios\AdminUsuarios.Designer.cs">
-      <DependentUpon>AdminUsuarios.cs</DependentUpon>
+    <Compile Include="Usuarios\Admin.Designer.cs">
+      <DependentUpon>Admin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Usuarios\AltaUsuario.cs">
+    <Compile Include="Usuarios\Alta.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Usuarios\AltaUsuario.Designer.cs">
-      <DependentUpon>AltaUsuario.cs</DependentUpon>
+    <Compile Include="Usuarios\Alta.Designer.cs">
+      <DependentUpon>Alta.cs</DependentUpon>
     </Compile>
-    <Compile Include="Usuarios\ModificacionUsuario.cs">
+    <Compile Include="Usuarios\ModificacionBaja.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Usuarios\ModificacionUsuario.Designer.cs">
-      <DependentUpon>ModificacionUsuario.cs</DependentUpon>
+    <Compile Include="Usuarios\ModificacionBaja.Designer.cs">
+      <DependentUpon>ModificacionBaja.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="FormPrincipal.resx">
       <DependentUpon>FormPrincipal.cs</DependentUpon>
@@ -178,14 +178,14 @@
     <EmbeddedResource Include="UserControls\User.resx">
       <DependentUpon>User.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Usuarios\AdminUsuarios.resx">
-      <DependentUpon>AdminUsuarios.cs</DependentUpon>
+    <EmbeddedResource Include="Usuarios\Admin.resx">
+      <DependentUpon>Admin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Usuarios\AltaUsuario.resx">
-      <DependentUpon>AltaUsuario.cs</DependentUpon>
+    <EmbeddedResource Include="Usuarios\Alta.resx">
+      <DependentUpon>Alta.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Usuarios\ModificacionUsuario.resx">
-      <DependentUpon>ModificacionUsuario.cs</DependentUpon>
+    <EmbeddedResource Include="Usuarios\ModificacionBaja.resx">
+      <DependentUpon>ModificacionBaja.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

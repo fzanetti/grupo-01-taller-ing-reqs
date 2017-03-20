@@ -25,10 +25,13 @@ namespace API.Persistencia
             string[] usuariosString = this.LeerArchivoFisico(_archivoUsuarios);
 
             foreach(string s in usuariosString){
-                Usuario usr;
-                usr = ParsearUsuario(s);
-                usr.Perfiles=ObtenerPerfilesUsuario(usr);
-                usuarios.Add(usr);
+                if (!String.IsNullOrEmpty(s))
+                {
+                    Usuario usr;
+                    usr = ParsearUsuario(s);
+                    usr.Perfiles = ObtenerPerfilesUsuario(usr);
+                    usuarios.Add(usr);
+                }  
             }
 
             return usuarios;
@@ -49,21 +52,28 @@ namespace API.Persistencia
 
             foreach (string s in perfilesString)
             {
-                Perfil perfil;
-                perfil = ParsearPerfil(s);
-                List<Funcion> funciones=new List<Funcion>();
-
-                foreach (string s2 in perfilesFuncionesString)
+                if (!String.IsNullOrEmpty(s))
                 {
-                    int idFuncion = ParsearPerfilesFunciones(perfil.Id, s2);
-                    if (idFuncion > -1)
-                    {
-                        funciones.Add(Funciones.ObtenerFuncionPorId(idFuncion));
-                    }
-                }
-                perfil.Funciones=funciones;
+                    Perfil perfil;
+                    perfil = ParsearPerfil(s);
+                    List<Funcion> funciones = new List<Funcion>();
 
-                perfiles.Add(perfil);              
+                    foreach (string s2 in perfilesFuncionesString)
+                    {
+                        if (!String.IsNullOrEmpty(s2))
+                        {
+                            int idFuncion = ParsearPerfilesFunciones(perfil.Id, s2);
+                            if (idFuncion > -1)
+                            {
+                                funciones.Add(Funciones.ObtenerFuncionPorId(idFuncion));
+                            }
+                        }
+                    }
+                    perfil.Funciones = funciones;
+
+                    perfiles.Add(perfil);              
+                }
+             
             }
 
             return perfiles;
@@ -78,11 +88,15 @@ namespace API.Persistencia
 
             foreach (string s in datosString)
             {
-                int idPerfil=ParsearUsuariosPerfiles(usr.Username,s);
-                if (idPerfil > -1)
+                if (!String.IsNullOrEmpty(s))
                 {
-                    perfiles.Add(todosLosPerfiles.Find(p => p.Id == idPerfil));
+                    int idPerfil = ParsearUsuariosPerfiles(usr.Username, s);
+                    if (idPerfil > -1)
+                    {
+                        perfiles.Add(todosLosPerfiles.Find(p => p.Id == idPerfil));
+                    }
                 }
+              
             }
 
             return perfiles;
@@ -232,21 +246,24 @@ namespace API.Persistencia
                 user.Departamento + ";" +
                 user.Cargo;
 
-            //using (Stream stream = assembly.GetManifestResourceStream(_archivoUsuarios))
-            using (StreamWriter writer = File.AppendText(_archivoUsuarios))
-            {
-                writer.WriteLine(String.Empty);
-                writer.WriteLine(line);
-                writer.Close();
-            }
+            File.AppendAllText(_archivoUsuarios, "\r\n"+line);
+
+            ////using (Stream stream = assembly.GetManifestResourceStream(_archivoUsuarios))
+            //using (StreamWriter writer = File.AppendText(_archivoUsuarios))
+            //{
+            //    //writer.WriteLine(String.Empty);
+            //    writer.WriteLine(line);
+            //    writer.Close();
+            //}
 
             //Ahora persistimos los perfiles
             foreach(Perfil p in user.Perfiles)
             {
-                using(StreamWriter writer = File.AppendText(_archivoUsuariosPerfiles))
-                {
-                    writer.WriteLine(user.Username + ";" + p.Id.ToString());
-                }
+                File.AppendAllText(_archivoUsuariosPerfiles, "\r\n" + user.Username + ";" + p.Id.ToString());
+                //using(StreamWriter writer = File.AppendText(_archivoUsuariosPerfiles))
+                //{
+                //    writer.WriteLine(user.Username + ";" + p.Id.ToString());
+                //}
             }
 
         }

@@ -12,9 +12,9 @@ using API.Dominio;
 
 namespace SGGEA.Usuarios
 {
-    public partial class AdminUsuarios : UserControl
+    public partial class Admin : UserControl
     {
-        public AdminUsuarios()
+        public Admin()
         {
             InitializeComponent();
             showUsers();
@@ -24,7 +24,7 @@ namespace SGGEA.Usuarios
         {
             int i=2;
             foreach (Usuario usuario in API.Controladores.Usuarios.ObtenerUsuarios()){
-                ComponentResourceManager resources = new ComponentResourceManager(typeof(AdminUsuarios));
+                ComponentResourceManager resources = new ComponentResourceManager(typeof(Admin));
                 User usr = new User();
                 usr.BackColor = System.Drawing.Color.Transparent;
                 usr.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("user1.BackgroundImage")));

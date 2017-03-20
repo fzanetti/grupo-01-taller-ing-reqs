@@ -12,11 +12,11 @@ using SGGEA.UserControls;
 
 namespace SGGEA.Usuarios
 {
-    public partial class AltaUsuario : UserControl
+    public partial class Alta : UserControl
     {
         List<SelPerfil> _perfiles;
 
-        public AltaUsuario()
+        public Alta()
         {
             InitializeComponent();
             _perfiles = new List<SelPerfil>();
@@ -27,7 +27,7 @@ namespace SGGEA.Usuarios
         private void btnAtras_Click(object sender, EventArgs e)
         {
             FormPrincipal.getInstancia().InitializeAdminUsuarios();
-        }       
+        }
 
         private void btnSelPerfiles_Click(object sender, EventArgs e)
         {
@@ -113,12 +113,12 @@ namespace SGGEA.Usuarios
             List<Perfil> perfilesUsuario = new List<Perfil>();
             foreach (SelPerfil selPer in _perfiles)
             {
-                if (selPer.Seleccionado())
+                if (selPer.Seleccionado)
                 {
                     perfilesUsuario.Add(selPer.getPerfil());
                 }
             }
-            if (perfilesUsuario.Count==0)
+            if (perfilesUsuario.Count == 0)
             {
                 lblErrorPerfiles.Visible = true;
                 camposCompletos = false;
@@ -128,7 +128,8 @@ namespace SGGEA.Usuarios
                 lblErrorPerfiles.Visible = false;
             }
 
-            if (camposCompletos) {
+            if (camposCompletos)
+            {
                 if (API.Controladores.Usuarios.ExisteUsuario(username))
                 {
                     campoUsername.TextoError = Globals.ErrorUsernameRegistrado;
@@ -142,11 +143,11 @@ namespace SGGEA.Usuarios
                     nuevo.Apellido = apellido;
                     nuevo.Email = email;
                     nuevo.Planta = planta;
-                    nuevo.Ubicacion = ubicacion;
+                    nuevo.UbicacionFisica = ubicacion;
                     nuevo.Departamento = departamento;
                     nuevo.Cargo = cargo;
                     nuevo.Perfiles = perfilesUsuario;
-                    bool altaOk= API.Controladores.Usuarios.AltaUsuario(nuevo);
+                    bool altaOk = API.Controladores.Usuarios.AltaUsuario(nuevo);
                     if (altaOk)
                     {
                         MostrarMensaje(Globals.AltaUsuarioOk);
@@ -156,10 +157,6 @@ namespace SGGEA.Usuarios
                         campoUsername.TextoError = Globals.AltaUsuarioError;
                     }
                 }
-
-               
-
-               
             }
         }
 
