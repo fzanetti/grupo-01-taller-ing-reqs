@@ -322,7 +322,7 @@ namespace SGGEA
             this.confirmLogout.TabIndex = 9;
             this.confirmLogout.TextoAceptar = "Aceptar";
             this.confirmLogout.TextoCancelar = "Cancelar";
-            this.confirmLogout.TextoMensaje = "¿Seguro que desea salir?";
+            this.confirmLogout.TextoMensaje = Globals.ConfirmacionSalir;
             this.confirmLogout.Visible = false;
             // 
             // Principal

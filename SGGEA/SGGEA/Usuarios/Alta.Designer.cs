@@ -47,6 +47,7 @@ namespace SGGEA.Usuarios
             this.campoUsername = new SGGEA.UserControls.CustomTextBox();
             this.btnSelPerfiles = new SGGEA.UserControls.CustomButton();
             this.btnCrear = new SGGEA.UserControls.CustomButton();
+            this.toast = new SGGEA.UserControls.Toast();
             this.panelPerfiles.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -78,7 +79,7 @@ namespace SGGEA.Usuarios
             this.panelPerfiles.BackgroundImage = global::SGGEA.Properties.Resources.fondoSelPerfiles;
             this.panelPerfiles.Controls.Add(this.flowLayoutPerfiles);
             this.panelPerfiles.Controls.Add(this.btnAceptarPerfiles);
-            this.panelPerfiles.Location = new System.Drawing.Point(51, 219);
+            this.panelPerfiles.Location = new System.Drawing.Point(54, 219);
             this.panelPerfiles.Name = "panelPerfiles";
             this.panelPerfiles.Size = new System.Drawing.Size(294, 258);
             this.panelPerfiles.TabIndex = 25;
@@ -136,8 +137,8 @@ namespace SGGEA.Usuarios
             this.campoPassword.Name = "campoPassword";
             this.campoPassword.Size = new System.Drawing.Size(256, 45);
             this.campoPassword.TabIndex = 2;
-            this.campoPassword.TextoCampo = System.String.Empty;
-            this.campoPassword.TextoError = System.String.Empty;
+            this.campoPassword.TextoCampo = "";
+            this.campoPassword.TextoError = "";
             this.campoPassword.TituloCampo = "Contraseña";
             // 
             // campoCargo
@@ -155,8 +156,8 @@ namespace SGGEA.Usuarios
             this.campoCargo.Name = "campoCargo";
             this.campoCargo.Size = new System.Drawing.Size(256, 45);
             this.campoCargo.TabIndex = 9;
-            this.campoCargo.TextoCampo = System.String.Empty;
-            this.campoCargo.TextoError = System.String.Empty;
+            this.campoCargo.TextoCampo = "";
+            this.campoCargo.TextoError = "";
             this.campoCargo.TituloCampo = "Cargo";
             // 
             // campoDto
@@ -174,8 +175,8 @@ namespace SGGEA.Usuarios
             this.campoDto.Name = "campoDto";
             this.campoDto.Size = new System.Drawing.Size(256, 45);
             this.campoDto.TabIndex = 8;
-            this.campoDto.TextoCampo = System.String.Empty;
-            this.campoDto.TextoError = System.String.Empty;
+            this.campoDto.TextoCampo = "";
+            this.campoDto.TextoError = "";
             this.campoDto.TituloCampo = "Departamento";
             // 
             // campoUbicacion
@@ -193,8 +194,8 @@ namespace SGGEA.Usuarios
             this.campoUbicacion.Name = "campoUbicacion";
             this.campoUbicacion.Size = new System.Drawing.Size(256, 45);
             this.campoUbicacion.TabIndex = 7;
-            this.campoUbicacion.TextoCampo = System.String.Empty;
-            this.campoUbicacion.TextoError = System.String.Empty;
+            this.campoUbicacion.TextoCampo = "";
+            this.campoUbicacion.TextoError = "";
             this.campoUbicacion.TituloCampo = "Ubicación física";
             // 
             // campoPlanta
@@ -212,8 +213,8 @@ namespace SGGEA.Usuarios
             this.campoPlanta.Name = "campoPlanta";
             this.campoPlanta.Size = new System.Drawing.Size(256, 45);
             this.campoPlanta.TabIndex = 6;
-            this.campoPlanta.TextoCampo = System.String.Empty;
-            this.campoPlanta.TextoError = System.String.Empty;
+            this.campoPlanta.TextoCampo = "";
+            this.campoPlanta.TextoError = "";
             this.campoPlanta.TituloCampo = "Planta";
             // 
             // campoEmail
@@ -231,8 +232,8 @@ namespace SGGEA.Usuarios
             this.campoEmail.Name = "campoEmail";
             this.campoEmail.Size = new System.Drawing.Size(256, 45);
             this.campoEmail.TabIndex = 5;
-            this.campoEmail.TextoCampo = System.String.Empty;
-            this.campoEmail.TextoError = System.String.Empty;
+            this.campoEmail.TextoCampo = "";
+            this.campoEmail.TextoError = "";
             this.campoEmail.TituloCampo = "Email";
             // 
             // campoApellido
@@ -250,8 +251,8 @@ namespace SGGEA.Usuarios
             this.campoApellido.Name = "campoApellido";
             this.campoApellido.Size = new System.Drawing.Size(256, 45);
             this.campoApellido.TabIndex = 4;
-            this.campoApellido.TextoCampo = System.String.Empty;
-            this.campoApellido.TextoError = System.String.Empty;
+            this.campoApellido.TextoCampo = "";
+            this.campoApellido.TextoError = "";
             this.campoApellido.TituloCampo = "Apellido";
             // 
             // campoNombre
@@ -269,8 +270,8 @@ namespace SGGEA.Usuarios
             this.campoNombre.Name = "campoNombre";
             this.campoNombre.Size = new System.Drawing.Size(256, 45);
             this.campoNombre.TabIndex = 3;
-            this.campoNombre.TextoCampo = System.String.Empty;
-            this.campoNombre.TextoError = System.String.Empty;
+            this.campoNombre.TextoCampo = "";
+            this.campoNombre.TextoError = "";
             this.campoNombre.TituloCampo = "Nombre";
             // 
             // campoUsername
@@ -288,8 +289,8 @@ namespace SGGEA.Usuarios
             this.campoUsername.Name = "campoUsername";
             this.campoUsername.Size = new System.Drawing.Size(256, 45);
             this.campoUsername.TabIndex = 1;
-            this.campoUsername.TextoCampo = System.String.Empty;
-            this.campoUsername.TextoError = System.String.Empty;
+            this.campoUsername.TextoCampo = "";
+            this.campoUsername.TextoError = "";
             this.campoUsername.TituloCampo = "Nombre de usuario";
             // 
             // btnSelPerfiles
@@ -322,11 +323,23 @@ namespace SGGEA.Usuarios
             this.btnCrear.UseVisualStyleBackColor = true;
             this.btnCrear.Click += new System.EventHandler(this.btnCrear_Click);
             // 
-            // AltaUsuario
+            // toast
+            // 
+            this.toast.BackColor = System.Drawing.Color.Transparent;
+            this.toast.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("toast.BackgroundImage")));
+            this.toast.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.toast.Location = new System.Drawing.Point(48, 329);
+            this.toast.Name = "toast";
+            this.toast.Size = new System.Drawing.Size(307, 59);
+            this.toast.TabIndex = 26;
+            this.toast.Visible = false;
+            // 
+            // Alta
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.Transparent;
             this.BackgroundImage = global::SGGEA.Properties.Resources.fondoPantalla;
+            this.Controls.Add(this.toast);
             this.Controls.Add(this.panelPerfiles);
             this.Controls.Add(this.lblErrorPerfiles);
             this.Controls.Add(this.campoPassword);
@@ -342,103 +355,15 @@ namespace SGGEA.Usuarios
             this.Controls.Add(this.btnCrear);
             this.Controls.Add(this.btnAtras);
             this.Controls.Add(this.lblTitulo);
-            this.Name = "AltaUsuario";
+            this.Name = "Alta";
             this.Size = new System.Drawing.Size(404, 800);
             this.panelPerfiles.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
-        private void MostrarMensaje(string mensaje)
-        {
-            timer = new System.Windows.Forms.Timer();
-            timer.Interval = 2000;
-            timer.Tick += new System.EventHandler(this.timer_Tick);
-            timer.Start();
-        
-            toast = new SGGEA.UserControls.Toast();
-            ComponentResourceManager resources = new ComponentResourceManager(typeof(Alta));
-            this.SuspendLayout();
-            toast.BackColor = System.Drawing.Color.Transparent;
-            toast.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("toast.BackgroundImage")));
-            toast.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            toast.Location = new System.Drawing.Point(48, 329);
-            toast.Name = "toast";
-            toast.Size = new System.Drawing.Size(307, 59);
-            toast.TabIndex = 25;
-            toast.TextoMensaje = mensaje;
-            this.Controls.Add(toast);
-            this.Controls.SetChildIndex(toast,0);
-            this.ResumeLayout(false);
-        }
-
-        private void MostrarSeleccioarPerfiles()
-        {
-            this.panelPerfiles = new System.Windows.Forms.Panel();
-            this.flowLayoutPerfiles = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnAceptarPerfiles = new SGGEA.UserControls.CustomButton();
-            this.panelPerfiles.SuspendLayout();
-            this.flowLayoutPerfiles.SuspendLayout();
-            this.SuspendLayout();
-            // 
-            // panelPerfiles
-            // 
-            this.panelPerfiles.BackgroundImage = global::SGGEA.Properties.Resources.fondoSelPerfiles;
-            this.panelPerfiles.Controls.Add(this.flowLayoutPerfiles);
-            this.panelPerfiles.Controls.Add(this.btnAceptarPerfiles);
-            this.panelPerfiles.Location = new System.Drawing.Point(51, 219);
-            this.panelPerfiles.Name = "panelPerfiles";
-            this.panelPerfiles.Size = new System.Drawing.Size(294, 258);
-            this.panelPerfiles.BackColor=System.Drawing.Color.FromArgb(237, 237, 237);
-            this.panelPerfiles.TabIndex = 25;
-            // 
-            // flowLayoutPerfiles
-            // 
-            this.flowLayoutPerfiles.AutoScroll = true;
-            this.flowLayoutPerfiles.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPerfiles.Location = new System.Drawing.Point(30, 58);
-            this.flowLayoutPerfiles.Name = "flowLayoutPerfiles";
-            this.flowLayoutPerfiles.Size = new System.Drawing.Size(236, 129);
-            this.flowLayoutPerfiles.BackColor = System.Drawing.Color.FromArgb(250, 250, 250);
-            this.flowLayoutPerfiles.TabIndex = 0; 
-            // 
-            // btnAceptarPerfiles
-            // 
-            this.btnAceptarPerfiles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(136)))), ((int)(((byte)(209)))));
-            this.btnAceptarPerfiles.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnAceptarPerfiles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAceptarPerfiles.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAceptarPerfiles.ForeColor = System.Drawing.Color.White;
-            this.btnAceptarPerfiles.Location = new System.Drawing.Point(100, 193);
-            this.btnAceptarPerfiles.Name = "btnAceptarPerfiles";
-            this.btnAceptarPerfiles.Size = new System.Drawing.Size(92, 33);
-            this.btnAceptarPerfiles.TabIndex = 1;
-            this.btnAceptarPerfiles.Text = "Aceptar";
-            this.btnAceptarPerfiles.UseVisualStyleBackColor = true;
-            this.btnAceptarPerfiles.Click += new System.EventHandler(this.btnAceptarPerfiles_Click);
-
-            AgregarPerfiles();
-
-            this.Controls.Add(this.panelPerfiles);
-            this.Controls.SetChildIndex(this.panelPerfiles,0);
-
-            this.panelPerfiles.ResumeLayout(false);
-            this.flowLayoutPerfiles.ResumeLayout(false);
-            this.ResumeLayout(false);
-        }
-   
         #endregion
 
-        private void timer_Tick(object sender, System.EventArgs e)
-        {
-            timer.Stop(); //If timer is not stopped, timer1_Tick event will be called for every 10 seconds
-            Controls.Remove(toast);
-            FormPrincipal.getInstancia().InitializeAdminUsuarios();
-        }
-
-        private System.Windows.Forms.Timer timer; 
-        private UserControls.Toast toast;
         private System.Windows.Forms.Label btnAtras;
         private System.Windows.Forms.Label lblTitulo;
         private UserControls.CustomButton btnCrear;
@@ -456,5 +381,6 @@ namespace SGGEA.Usuarios
         private System.Windows.Forms.Panel panelPerfiles;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPerfiles;
         private UserControls.CustomButton btnAceptarPerfiles;
+        private UserControls.Toast toast;
     }
 }

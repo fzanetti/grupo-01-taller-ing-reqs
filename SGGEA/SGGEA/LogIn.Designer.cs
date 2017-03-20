@@ -32,7 +32,6 @@
             this.campoPassword = new SGGEA.UserControls.CustomTextBox();
             this.campoUsername = new SGGEA.UserControls.CustomTextBox();
             this.btnIniciarSesion = new SGGEA.UserControls.CustomButton();
-            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // campoPassword
@@ -88,27 +87,13 @@
             this.btnIniciarSesion.UseVisualStyleBackColor = true;
             this.btnIniciarSesion.Click += new System.EventHandler(this.btnIniciarSesion_Click);
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(149, 454);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // Login
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
-
+            this.BackgroundImage = global::SGGEA.Properties.Resources.LogIn;
             this.Controls.Add(this.campoPassword);
             this.Controls.Add(this.campoUsername);
-
-            this.BackgroundImage = global::SGGEA.Properties.Resources.LogIn;
-            this.Controls.Add(this.button1);
-
             this.Controls.Add(this.btnIniciarSesion);
             this.Name = "Login";
             this.Size = new System.Drawing.Size(404, 800);
@@ -121,7 +106,6 @@
         private UserControls.CustomButton btnIniciarSesion;
         private UserControls.CustomTextBox campoUsername;
         private UserControls.CustomTextBox campoPassword;
-        private System.Windows.Forms.Button button1;
 
     }
 }

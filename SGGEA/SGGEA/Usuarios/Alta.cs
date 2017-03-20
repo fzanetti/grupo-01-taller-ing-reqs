@@ -12,7 +12,7 @@ using SGGEA.UserControls;
 
 namespace SGGEA.Usuarios
 {
-    public partial class Alta : UserControl
+    public partial class Alta : UserControl, ToastObserver
     {
         List<SelPerfil> _perfiles;
 
@@ -22,6 +22,7 @@ namespace SGGEA.Usuarios
             _perfiles = new List<SelPerfil>();
             AgregarPerfiles();
             lblErrorPerfiles.Text = Globals.ErrorSelPerfiles;
+            toast.AddToastObserver(this);
         }
 
         private void btnAtras_Click(object sender, EventArgs e)
@@ -150,15 +151,19 @@ namespace SGGEA.Usuarios
                     bool altaOk = API.Controladores.Usuarios.AltaUsuario(nuevo);
                     if (altaOk)
                     {
-                        MostrarMensaje(Globals.AltaUsuarioOk);
+                        toast.MostrarMensaje(Globals.AltaUsuarioOk);
                     }
                     else
                     {
-                        campoUsername.TextoError = Globals.AltaUsuarioError;
+                        toast.MostrarMensaje(Globals.AltaUsuarioError,false);
                     }
                 }
             }
         }
 
+        public void AccionPosterior()
+        {
+            FormPrincipal.getInstancia().InitializeAdminUsuarios();
+        }
     }
 }

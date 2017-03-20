@@ -84,6 +84,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ToastObserver.cs" />
     <Compile Include="UserControls\CustomButton.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -227,6 +228,7 @@
     <Content Include="Resources\fondo-selperfiles.png" />
     <Content Include="Resources\fondo-text-box.png" />
     <Content Include="Resources\fondo-toast.png" />
+    <None Include="Resources\fondo-toast1.png" />
     <Content Include="Resources\fondo-usuario-hover.png" />
     <Content Include="Resources\fondo-usuario.png" />
     <Content Include="Resources\fondoPopup.png" />

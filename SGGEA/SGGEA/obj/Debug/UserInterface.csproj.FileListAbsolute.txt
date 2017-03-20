@@ -26,11 +26,10 @@ C:\Users\Fernando Zanetti\Desktop\SGGEA\SGGEA\obj\Debug\SGGEA.Properties.Resourc
 C:\Users\Fernando Zanetti\Desktop\SGGEA\SGGEA\obj\Debug\SGGEA.UserControls.ConfirmationDialog.resources
 C:\Users\Fernando Zanetti\Desktop\SGGEA\SGGEA\obj\Debug\UserInterface.csproj.GenerateResource.Cache
 C:\Users\Fernando Zanetti\Desktop\SGGEA\SGGEA\obj\Debug\UserInterface.csprojResolveAssemblyReference.cache
-C:\Users\Fernando Zanetti\Documents\Obligatorio Taller Ing. Req\grupo-01-taller-ing-reqs\SGGEA\SGGEA\bin\Debug\SGGEA.exe.config
-C:\Users\Fernando Zanetti\Documents\Obligatorio Taller Ing. Req\grupo-01-taller-ing-reqs\SGGEA\SGGEA\bin\Debug\SGGEA.exe
-C:\Users\Fernando Zanetti\Documents\Obligatorio Taller Ing. Req\grupo-01-taller-ing-reqs\SGGEA\SGGEA\bin\Debug\SGGEA.pdb
-C:\Users\Fernando Zanetti\Documents\Obligatorio Taller Ing. Req\grupo-01-taller-ing-reqs\SGGEA\SGGEA\bin\Debug\API.dll
-C:\Users\Fernando Zanetti\Documents\Obligatorio Taller Ing. Req\grupo-01-taller-ing-reqs\SGGEA\SGGEA\bin\Debug\API.pdb
+C:\Users\gotero\Facultad\TallerIngReqs\Obligatorio\grupo-01-taller-ing-reqs\SGGEA\SGGEA\obj\Debug\SGGEA.UserControls.User.resources
+C:\Users\gotero\Facultad\TallerIngReqs\Obligatorio\grupo-01-taller-ing-reqs\SGGEA\SGGEA\obj\Debug\SGGEA.Usuarios.AdminUsuarios.resources
+C:\Users\gotero\Facultad\TallerIngReqs\Obligatorio\grupo-01-taller-ing-reqs\SGGEA\SGGEA\obj\Debug\SGGEA.Usuarios.AltaUsuario.resources
+C:\Users\gotero\Facultad\TallerIngReqs\Obligatorio\grupo-01-taller-ing-reqs\SGGEA\SGGEA\obj\Debug\SGGEA.Usuarios.ModificacionUsuario.resources
 C:\Users\Fernando Zanetti\Documents\Obligatorio Taller Ing. Req\grupo-01-taller-ing-reqs\SGGEA\SGGEA\obj\Debug\UserInterface.csprojResolveAssemblyReference.cache
 C:\Users\Fernando Zanetti\Documents\Obligatorio Taller Ing. Req\grupo-01-taller-ing-reqs\SGGEA\SGGEA\obj\Debug\SGGEA.FormPrincipal.resources
 C:\Users\Fernando Zanetti\Documents\Obligatorio Taller Ing. Req\grupo-01-taller-ing-reqs\SGGEA\SGGEA\obj\Debug\SGGEA.Login.resources
@@ -38,16 +37,17 @@ C:\Users\Fernando Zanetti\Documents\Obligatorio Taller Ing. Req\grupo-01-taller-
 C:\Users\Fernando Zanetti\Documents\Obligatorio Taller Ing. Req\grupo-01-taller-ing-reqs\SGGEA\SGGEA\obj\Debug\SGGEA.Properties.Resources.resources
 C:\Users\Fernando Zanetti\Documents\Obligatorio Taller Ing. Req\grupo-01-taller-ing-reqs\SGGEA\SGGEA\obj\Debug\SGGEA.UserControls.ConfirmationDialog.resources
 C:\Users\Fernando Zanetti\Documents\Obligatorio Taller Ing. Req\grupo-01-taller-ing-reqs\SGGEA\SGGEA\obj\Debug\SGGEA.UserControls.CustomTextBox.resources
-C:\Users\Fernando Zanetti\Documents\Obligatorio Taller Ing. Req\grupo-01-taller-ing-reqs\SGGEA\SGGEA\obj\Debug\SGGEA.UserControls.User.resources
-C:\Users\Fernando Zanetti\Documents\Obligatorio Taller Ing. Req\grupo-01-taller-ing-reqs\SGGEA\SGGEA\obj\Debug\UserInterface.csproj.GenerateResource.Cache
-C:\Users\Fernando Zanetti\Documents\Obligatorio Taller Ing. Req\grupo-01-taller-ing-reqs\SGGEA\SGGEA\obj\Debug\SGGEA.exe
-C:\Users\Fernando Zanetti\Documents\Obligatorio Taller Ing. Req\grupo-01-taller-ing-reqs\SGGEA\SGGEA\obj\Debug\SGGEA.pdb
-C:\Users\Fernando Zanetti\Documents\Obligatorio Taller Ing. Req\grupo-01-taller-ing-reqs\SGGEA\SGGEA\obj\Debug\SGGEA.UserControls.Toast.resources
 C:\Users\Fernando Zanetti\Documents\Obligatorio Taller Ing. Req\grupo-01-taller-ing-reqs\SGGEA\SGGEA\obj\Debug\SGGEA.UserControls.SelPerfil.resources
-C:\Users\gotero\Facultad\TallerIngReqs\Obligatorio\grupo-01-taller-ing-reqs\SGGEA\SGGEA\obj\Debug\SGGEA.UserControls.User.resources
-C:\Users\gotero\Facultad\TallerIngReqs\Obligatorio\grupo-01-taller-ing-reqs\SGGEA\SGGEA\obj\Debug\SGGEA.Usuarios.AdminUsuarios.resources
-C:\Users\gotero\Facultad\TallerIngReqs\Obligatorio\grupo-01-taller-ing-reqs\SGGEA\SGGEA\obj\Debug\SGGEA.Usuarios.AltaUsuario.resources
-C:\Users\gotero\Facultad\TallerIngReqs\Obligatorio\grupo-01-taller-ing-reqs\SGGEA\SGGEA\obj\Debug\SGGEA.Usuarios.ModificacionUsuario.resources
+C:\Users\Fernando Zanetti\Documents\Obligatorio Taller Ing. Req\grupo-01-taller-ing-reqs\SGGEA\SGGEA\obj\Debug\SGGEA.UserControls.Toast.resources
+C:\Users\Fernando Zanetti\Documents\Obligatorio Taller Ing. Req\grupo-01-taller-ing-reqs\SGGEA\SGGEA\obj\Debug\SGGEA.UserControls.User.resources
 C:\Users\Fernando Zanetti\Documents\Obligatorio Taller Ing. Req\grupo-01-taller-ing-reqs\SGGEA\SGGEA\obj\Debug\SGGEA.Usuarios.Admin.resources
 C:\Users\Fernando Zanetti\Documents\Obligatorio Taller Ing. Req\grupo-01-taller-ing-reqs\SGGEA\SGGEA\obj\Debug\SGGEA.Usuarios.Alta.resources
 C:\Users\Fernando Zanetti\Documents\Obligatorio Taller Ing. Req\grupo-01-taller-ing-reqs\SGGEA\SGGEA\obj\Debug\SGGEA.Usuarios.ModificacionBaja.resources
+C:\Users\Fernando Zanetti\Documents\Obligatorio Taller Ing. Req\grupo-01-taller-ing-reqs\SGGEA\SGGEA\obj\Debug\UserInterface.csproj.GenerateResource.Cache
+C:\Users\Fernando Zanetti\Documents\Obligatorio Taller Ing. Req\grupo-01-taller-ing-reqs\SGGEA\SGGEA\bin\Debug\SGGEA.exe.config
+C:\Users\Fernando Zanetti\Documents\Obligatorio Taller Ing. Req\grupo-01-taller-ing-reqs\SGGEA\SGGEA\bin\Debug\SGGEA.exe
+C:\Users\Fernando Zanetti\Documents\Obligatorio Taller Ing. Req\grupo-01-taller-ing-reqs\SGGEA\SGGEA\bin\Debug\SGGEA.pdb
+C:\Users\Fernando Zanetti\Documents\Obligatorio Taller Ing. Req\grupo-01-taller-ing-reqs\SGGEA\SGGEA\bin\Debug\API.dll
+C:\Users\Fernando Zanetti\Documents\Obligatorio Taller Ing. Req\grupo-01-taller-ing-reqs\SGGEA\SGGEA\bin\Debug\API.pdb
+C:\Users\Fernando Zanetti\Documents\Obligatorio Taller Ing. Req\grupo-01-taller-ing-reqs\SGGEA\SGGEA\obj\Debug\SGGEA.exe
+C:\Users\Fernando Zanetti\Documents\Obligatorio Taller Ing. Req\grupo-01-taller-ing-reqs\SGGEA\SGGEA\obj\Debug\SGGEA.pdb
