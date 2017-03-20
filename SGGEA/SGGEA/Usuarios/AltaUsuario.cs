@@ -129,26 +129,37 @@ namespace SGGEA.Usuarios
             }
 
             if (camposCompletos) {
-                Usuario nuevo = new Usuario();
-                nuevo.Username = username;
-                nuevo.Password = password;
-                nuevo.Nombre = nombre;
-                nuevo.Apellido = apellido;
-                nuevo.Email = email;
-                nuevo.Planta = planta;
-                nuevo.Ubicacion = ubicacion;
-                nuevo.Departamento = departamento;
-                nuevo.Cargo = cargo;
-
-                bool altaOk = API.Controladores.Usuarios.AltaUsuario(nuevo);
-                if (altaOk)
-                {
-                    MostrarMensaje(Globals.AltaUsuarioOk);
-                }
-                else
+                if (API.Controladores.Usuarios.ExisteUsuario(username))
                 {
                     campoUsername.TextoError = Globals.ErrorUsernameRegistrado;
                 }
+                else
+                {
+                    Usuario nuevo = new Usuario();
+                    nuevo.Username = username;
+                    nuevo.Password = password;
+                    nuevo.Nombre = nombre;
+                    nuevo.Apellido = apellido;
+                    nuevo.Email = email;
+                    nuevo.Planta = planta;
+                    nuevo.Ubicacion = ubicacion;
+                    nuevo.Departamento = departamento;
+                    nuevo.Cargo = cargo;
+                    nuevo.Perfiles = perfilesUsuario;
+                    bool altaOk= API.Controladores.Usuarios.AltaUsuario(nuevo);
+                    if (altaOk)
+                    {
+                        MostrarMensaje(Globals.AltaUsuarioOk);
+                    }
+                    else
+                    {
+                        campoUsername.TextoError = Globals.AltaUsuarioError;
+                    }
+                }
+
+               
+
+               
             }
         }
 

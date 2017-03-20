@@ -12,18 +12,17 @@ namespace API.Persistencia
 {
     public class PersistenciaService : IPersistencia
     {
-        private const string _archivoUsuarios = "API.Resources.datos_de_usuarios.csv";
-        private const string _archivoPerfiles = "API.Resources.datos_de_perfiles.csv";
-        private const string _archivoPerfilesFunciones = "API.Resources.datos_de_perfiles_funciones.csv";
-        private const string _archivoUsuariosPerfiles = "API.Resources.datos_de_usuarios_perfiles.csv";
-        private const string _archivoUsuarios2 = "datos_de_usuarios.csv";
-        private const string _archivoUsuariosPerfiles2 = "datos_de_usuarios_perfiles.csv";
+        private const string _archivoUsuarios = ".\\Recursos\\datos_de_usuarios.csv";
+        private const string _archivoPerfiles = ".\\Recursos\\datos_de_perfiles.csv";
+        private const string _archivoPerfilesFunciones = ".\\Recursos\\datos_de_perfiles_funciones.csv";
+        private const string _archivoUsuariosPerfiles = ".\\Recursos\\datos_de_usuarios_perfiles.csv";
+
 
         public List<Usuario> ObtenerUsuarios()
         {
             List<Usuario> usuarios = new List<Usuario>();
 
-            string[] usuariosString = this.LeerArchivoFisico(_archivoUsuarios2);
+            string[] usuariosString = this.LeerArchivoFisico(_archivoUsuarios);
 
             foreach(string s in usuariosString){
                 Usuario usr;
@@ -45,8 +44,8 @@ namespace API.Persistencia
         {
             List<Perfil> perfiles = new List<Perfil>();
 
-            string[] perfilesString = this.LeerArchivo(_archivoPerfiles);
-            string[] perfilesFuncionesString = this.LeerArchivo(_archivoPerfilesFunciones);
+            string[] perfilesString = this.LeerArchivoFisico(_archivoPerfiles);
+            string[] perfilesFuncionesString = this.LeerArchivoFisico(_archivoPerfilesFunciones);
 
             foreach (string s in perfilesString)
             {
@@ -75,7 +74,7 @@ namespace API.Persistencia
             List<Perfil> perfiles = new List<Perfil>();
             List<Perfil> todosLosPerfiles= ObtenerPerfiles();
 
-            string[] datosString = LeerArchivo(_archivoUsuariosPerfiles);
+            string[] datosString = LeerArchivoFisico(_archivoUsuariosPerfiles);
 
             foreach (string s in datosString)
             {
@@ -90,35 +89,21 @@ namespace API.Persistencia
 
         }
 
-        private string[] LeerArchivo(string archivo)
-        {
-            var assembly = Assembly.GetExecutingAssembly();
-            string result;
-
-            using (Stream stream = assembly.GetManifestResourceStream(archivo))
-            using (StreamReader reader = new StreamReader(stream))
-            {
-                result = reader.ReadToEnd();
-            }
-            string[] stringSeparators = new string[] { "\r\n" };
-            string[] lines = result.Split(stringSeparators, StringSplitOptions.None);
-            return lines;
-        }
 
         private string[] LeerArchivoFisico(string archivo)
         {
             string result;
 
-            using(StreamReader sr=new StreamReader(archivo))
+            using (StreamReader sr = new StreamReader(archivo))
             {
-                result=sr.ReadToEnd();
+                result = sr.ReadToEnd();
             }
 
             string[] stringSeparators = new string[] { "\r\n" };
             string[] lines = result.Split(stringSeparators, StringSplitOptions.None);
             return lines;
-
         }
+
 
         private Usuario ParsearUsuario(string linea)
         {
@@ -248,18 +233,17 @@ namespace API.Persistencia
                 user.Cargo;
 
             //using (Stream stream = assembly.GetManifestResourceStream(_archivoUsuarios))
-            using (StreamWriter writer = File.AppendText(_archivoUsuarios2))
+            using (StreamWriter writer = File.AppendText(_archivoUsuarios))
             {
-
+                writer.WriteLine(String.Empty);
                 writer.WriteLine(line);
                 writer.Close();
-
             }
 
             //Ahora persistimos los perfiles
             foreach(Perfil p in user.Perfiles)
             {
-                using(StreamWriter writer = File.AppendText(_archivoUsuariosPerfiles2))
+                using(StreamWriter writer = File.AppendText(_archivoUsuariosPerfiles))
                 {
                     writer.WriteLine(user.Username + ";" + p.Id.ToString());
                 }
@@ -273,7 +257,7 @@ namespace API.Persistencia
 
             //Modificamos primero los datos del usuario
             string tempLine;
-            using (StreamReader reader = new StreamReader(_archivoUsuarios2))
+            using (StreamReader reader = new StreamReader(_archivoUsuarios))
             {
 
                 while ((tempLine = reader.ReadLine()) != null)
@@ -302,7 +286,7 @@ namespace API.Persistencia
 
             //Ahora escribimos los datos en el archivo
 
-            using(StreamWriter writer=new StreamWriter(_archivoUsuarios2))
+            using(StreamWriter writer=new StreamWriter(_archivoUsuarios))
             {
                 foreach(string s in usuariosLineas)
                 {
@@ -313,7 +297,7 @@ namespace API.Persistencia
             List<string> perfilesLineas = new List<string>();
 
             //Ahora modificamos los datos del perfil
-            using (StreamReader reader = new StreamReader(_archivoUsuariosPerfiles2))
+            using (StreamReader reader = new StreamReader(_archivoUsuariosPerfiles))
             {
                     while ((tempLine = reader.ReadLine()) != null)
                     {
@@ -332,7 +316,7 @@ namespace API.Persistencia
 
             //Ahora escribimos los datos en el archivo
 
-            using (StreamWriter writer = new StreamWriter(_archivoUsuariosPerfiles2))
+            using (StreamWriter writer = new StreamWriter(_archivoUsuariosPerfiles))
             {
                 foreach (string s in perfilesLineas)
                 {
@@ -347,7 +331,7 @@ namespace API.Persistencia
             List<string> usuariosLineas = new List<String>();
 
             string tempLine;
-            using (StreamReader reader = new StreamReader(_archivoUsuarios2))
+            using (StreamReader reader = new StreamReader(_archivoUsuarios))
             {
 
                 while ((tempLine = reader.ReadLine()) != null)
@@ -362,7 +346,7 @@ namespace API.Persistencia
 
             //Ahora escribimos los datos en el archivo
 
-            using (StreamWriter writer = new StreamWriter(_archivoUsuarios2))
+            using (StreamWriter writer = new StreamWriter(_archivoUsuarios))
             {
                 foreach (string s in usuariosLineas)
                 {
@@ -373,7 +357,7 @@ namespace API.Persistencia
             List<string> perfilesLineas = new List<string>();
 
             //Ahora modificamos los datos del perfil
-            using (StreamReader reader = new StreamReader(_archivoUsuariosPerfiles2))
+            using (StreamReader reader = new StreamReader(_archivoUsuariosPerfiles))
             {
                 while ((tempLine = reader.ReadLine()) != null)
                 {
@@ -384,7 +368,7 @@ namespace API.Persistencia
 
             //Ahora escribimos los datos en el archivo
 
-            using (StreamWriter writer = new StreamWriter(_archivoUsuariosPerfiles2))
+            using (StreamWriter writer = new StreamWriter(_archivoUsuariosPerfiles))
             {
                 foreach (string s in perfilesLineas)
                 {

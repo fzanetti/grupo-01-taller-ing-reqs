@@ -17,6 +17,11 @@ namespace SGGEA
         public static string ErrorUsernameRegistrado = "Nombre usuario ya registrado";
         public static string ErrorSelPerfiles = "Debe seleccionar al menos un perfil";
         public static string AltaUsuarioOk = "Se ha agregado el usuario exitosamente";
+        public static string AltaUsuarioError = "Error inesperado al registrar al usuario";
+        public static string ModificacionUsuarioOk = "Se ha modificado el usuario exitosamente";
+        public static string ModificacionUsuarioError = "Error inesperado al modificar al usuario";
+        public static string BajaUsuarioOk = "Se ha eliminado el usuario exitosamente";
+        public static string BajaUsuarioError = "Error inesperado al eliminar al usuario";
 
     }
 }

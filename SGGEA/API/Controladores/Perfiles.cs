@@ -13,7 +13,15 @@ namespace API.Controladores
         public static List<Perfil> ObtenerPerfiles()
         {
             IPersistencia persistencia = new PersistenciaService();
-            return persistencia.ObtenerPerfiles();
+            try
+            {
+                return persistencia.ObtenerPerfiles();
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return new List<Perfil>();
         }
     }
 }

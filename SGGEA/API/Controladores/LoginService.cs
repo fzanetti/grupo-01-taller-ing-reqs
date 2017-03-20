@@ -29,15 +29,22 @@ namespace API.Controladores
 
         public bool ValidarLogin(string username, string password)
         {
-            List<Usuario> users = _persistencia.ObtenerUsuarios();
-
-            foreach (Usuario user in users)
+            try
             {
-                if (username.Equals(user.Username) && password.Equals(user.Password))
+                List<Usuario> users = _persistencia.ObtenerUsuarios();
+
+                foreach (Usuario user in users)
                 {
-                    _usuarioLogueado = user;
-                    return true;
+                    if (username.Equals(user.Username) && password.Equals(user.Password))
+                    {
+                        _usuarioLogueado = user;
+                        return true;
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+
             }
 
             return false;

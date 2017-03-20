@@ -32,57 +32,67 @@ namespace API.Controladores
             return persistencia.ObtenerUsuario(username);
         }
 
-        ///<summary>
-        ///<para>Da de alta un nuevo usuario. Si el username ya esta registrado devuelve false en caso contrario devuelve true.</para>
-        ///</summary>
         public static bool AltaUsuario(Usuario usuario)
         {
-            return false;
-        }
-
-        public static Usuario AgregarUsuario(string username, string password, string nombre, string apellido, string email, string planta, string ubicacionFisica, string departamento, string cargo, List<Perfil> perfiles)
-        {
             IPersistencia persistencia = new PersistenciaService();
-            Usuario usuario = new Dominio.Usuario();
+            try
+            {
+                persistencia.AgregarUsuario(usuario);
+                return true;
+            }
+            catch (Exception ex)
+            {
 
-            usuario.Username = username;
-            usuario.Password = password;
-            usuario.Nombre = nombre;
-            usuario.Apellido = apellido;
-            usuario.Email = email;
-            usuario.Planta = planta;
-            usuario.UbicacionFisica = ubicacionFisica;
-            usuario.Departamento = departamento;
-            usuario.Cargo = cargo;
-            usuario.Perfiles = perfiles;
-
-            persistencia.AgregarUsuario(usuario);
-
-            return usuario;
+            }
+            return false;
         }
 
         public static bool ExisteUsuario(string username)
         {
-            foreach(Usuario u in Usuarios.ObtenerUsuarios())
+            try
             {
-                if (u.Username.Equals(username))
-                    return true;
+                foreach (Usuario u in Usuarios.ObtenerUsuarios())
+                {
+                    if (u.Username.Equals(username))
+                        return true;
+                }
+            }
+            catch (Exception ex)
+            {
+
             }
 
             return false;
         }
 
-        public static void ModificarUsuario(Usuario user)
+        public static bool ModificarUsuario(Usuario user)
         {
             IPersistencia persistencia = new PersistenciaService();
-            persistencia.ModificarUsuario(user);
+            try
+            {
+                persistencia.ModificarUsuario(user);
+                return true;
+            }
+            catch (Exception ex)
+            {
 
+            }
+            return false;
         }
 
-        public static void EliminarUsuario(Usuario user)
+        public static bool EliminarUsuario(Usuario user)
         {
             IPersistencia persistencia = new PersistenciaService();
-            persistencia.BajaUsuario(user);
+            try
+            {
+                persistencia.BajaUsuario(user);
+                return true;
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return false;
         }
     }
 }

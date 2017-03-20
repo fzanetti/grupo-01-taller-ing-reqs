@@ -12,3 +12,10 @@ C:\Users\Fernando Zanetti\Documents\Obligatorio Taller Ing. Req\grupo-01-taller-
 C:\Users\Fernando Zanetti\Documents\Obligatorio Taller Ing. Req\grupo-01-taller-ing-reqs\SGGEA\SGGEA\obj\Release\UserInterface.csproj.GenerateResource.Cache
 C:\Users\Fernando Zanetti\Documents\Obligatorio Taller Ing. Req\grupo-01-taller-ing-reqs\SGGEA\SGGEA\obj\Release\SGGEA.exe
 C:\Users\Fernando Zanetti\Documents\Obligatorio Taller Ing. Req\grupo-01-taller-ing-reqs\SGGEA\SGGEA\obj\Release\SGGEA.pdb
+C:\Users\Fernando Zanetti\Documents\Obligatorio Taller Ing. Req\grupo-01-taller-ing-reqs\SGGEA\SGGEA\obj\Release\SGGEA.UserControls.CustomTextBox.resources
+C:\Users\Fernando Zanetti\Documents\Obligatorio Taller Ing. Req\grupo-01-taller-ing-reqs\SGGEA\SGGEA\obj\Release\SGGEA.UserControls.SelPerfil.resources
+C:\Users\Fernando Zanetti\Documents\Obligatorio Taller Ing. Req\grupo-01-taller-ing-reqs\SGGEA\SGGEA\obj\Release\SGGEA.UserControls.Toast.resources
+C:\Users\Fernando Zanetti\Documents\Obligatorio Taller Ing. Req\grupo-01-taller-ing-reqs\SGGEA\SGGEA\obj\Release\SGGEA.UserControls.User.resources
+C:\Users\Fernando Zanetti\Documents\Obligatorio Taller Ing. Req\grupo-01-taller-ing-reqs\SGGEA\SGGEA\obj\Release\SGGEA.Usuarios.AdminUsuarios.resources
+C:\Users\Fernando Zanetti\Documents\Obligatorio Taller Ing. Req\grupo-01-taller-ing-reqs\SGGEA\SGGEA\obj\Release\SGGEA.Usuarios.AltaUsuario.resources
+C:\Users\Fernando Zanetti\Documents\Obligatorio Taller Ing. Req\grupo-01-taller-ing-reqs\SGGEA\SGGEA\obj\Release\SGGEA.Usuarios.ModificacionUsuario.resources

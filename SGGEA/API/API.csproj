@@ -62,10 +62,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <EmbeddedResource Include="Resources\datos_de_usuarios.csv" />
-    <EmbeddedResource Include="Resources\datos_de_perfiles.csv" />
-    <EmbeddedResource Include="Resources\datos_de_usuarios_perfiles.csv" />
-    <EmbeddedResource Include="Resources\datos_de_perfiles_funciones.csv" />
+    <Content Include="Recursos\datos_de_usuarios.csv" />
+    <Content Include="Recursos\datos_de_perfiles.csv" />
+    <Content Include="Recursos\datos_de_usuarios_perfiles.csv" />
+    <Content Include="Recursos\datos_de_perfiles_funciones.csv" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">
