@@ -70,5 +70,11 @@ namespace API.Controladores
             persistencia.ModificarUsuario(user);
 
         }
+
+        public static void EliminarUsuario(Usuario user)
+        {
+            IPersistencia persistencia = new PersistenciaService();
+            persistencia.BajaUsuario(user);
+        }
     }
 }

@@ -17,6 +17,8 @@ namespace API.Persistencia
 
         void ModificarUsuario(Usuario user);
 
+        void BajaUsuario(Usuario user);
+
 
     }
 }

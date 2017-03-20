@@ -341,5 +341,56 @@ namespace API.Persistencia
             }
 
         }
+
+        public void BajaUsuario(Usuario user)
+        {
+            List<string> usuariosLineas = new List<String>();
+
+            string tempLine;
+            using (StreamReader reader = new StreamReader(_archivoUsuarios2))
+            {
+
+                while ((tempLine = reader.ReadLine()) != null)
+                {
+                    if (tempLine.IndexOf(user.Username) == -1)
+                    {
+                        usuariosLineas.Add(tempLine);
+
+                    }
+                }
+            }
+
+            //Ahora escribimos los datos en el archivo
+
+            using (StreamWriter writer = new StreamWriter(_archivoUsuarios2))
+            {
+                foreach (string s in usuariosLineas)
+                {
+                    writer.WriteLine(s);
+                }
+            }
+
+            List<string> perfilesLineas = new List<string>();
+
+            //Ahora modificamos los datos del perfil
+            using (StreamReader reader = new StreamReader(_archivoUsuariosPerfiles2))
+            {
+                while ((tempLine = reader.ReadLine()) != null)
+                {
+                    if (tempLine.IndexOf(user.Username) == -1)
+                        perfilesLineas.Add(tempLine);
+                }
+            }
+
+            //Ahora escribimos los datos en el archivo
+
+            using (StreamWriter writer = new StreamWriter(_archivoUsuariosPerfiles2))
+            {
+                foreach (string s in perfilesLineas)
+                {
+                    writer.WriteLine(s);
+                }
+            }
+        }
     }
 }
