@@ -39,5 +39,50 @@ namespace API.Controladores
         {
             return false;
         }
+
+        public static Usuario AgregarUsuario(string username, string password, string nombre, string apellido, string email, string planta, string ubicacionFisica, string departamento, string cargo, List<Perfil> perfiles)
+        {
+            IPersistencia persistencia = new PersistenciaService();
+            Usuario usuario = new Dominio.Usuario();
+
+            usuario.Username = username;
+            usuario.Password = password;
+            usuario.Nombre = nombre;
+            usuario.Apellido = apellido;
+            usuario.Email = email;
+            usuario.Planta = planta;
+            usuario.UbicacionFisica = ubicacionFisica;
+            usuario.Departamento = departamento;
+            usuario.Cargo = cargo;
+            usuario.Perfiles = perfiles;
+
+            persistencia.AgregarUsuario(usuario);
+
+            return usuario;
+        }
+
+        public static bool ExisteUsuario(string username)
+        {
+            foreach(Usuario u in Usuarios.ObtenerUsuarios())
+            {
+                if (u.Username.Equals(username))
+                    return true;
+            }
+
+            return false;
+        }
+
+        public static void ModificarUsuario(Usuario user)
+        {
+            IPersistencia persistencia = new PersistenciaService();
+            persistencia.ModificarUsuario(user);
+
+        }
+
+        public static void EliminarUsuario(Usuario user)
+        {
+            IPersistencia persistencia = new PersistenciaService();
+            persistencia.BajaUsuario(user);
+        }
     }
 }

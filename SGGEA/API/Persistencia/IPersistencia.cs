@@ -12,5 +12,13 @@ namespace API.Persistencia
         List<Usuario> ObtenerUsuarios();
         List<Perfil> ObtenerPerfiles();
         Usuario ObtenerUsuario(string username);
+
+        void AgregarUsuario(Usuario user);
+
+        void ModificarUsuario(Usuario user);
+
+        void BajaUsuario(Usuario user);
+
+
     }
 }

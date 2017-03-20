@@ -8,6 +8,7 @@ namespace API.Dominio
 {
     public class Usuario
     {
+
         public string Username { get; set; }
         public string Password { get; set; }
         public string Nombre { get; set; }
@@ -18,5 +19,6 @@ namespace API.Dominio
         public string Departamento { get; set; }
         public string Cargo { get; set; }
         public List<Perfil> Perfiles { get; set; }
+        public string UbicacionFisica { get; set; }
     }
 }

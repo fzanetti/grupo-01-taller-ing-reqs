@@ -8,8 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using API.Controladores;
-
-
+using API.Dominio;
 
 namespace SGGEA
 {
@@ -56,6 +55,16 @@ namespace SGGEA
             {
                 DoLogin();
             }
+        }
+
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Usuario u = new Usuario();
+            u.Username="usuario1";
+
+            API.Controladores.Usuarios.EliminarUsuario(u);
+
         }
     }
 }
