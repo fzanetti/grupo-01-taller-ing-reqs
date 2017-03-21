@@ -22,6 +22,7 @@ namespace SGGEA
             InitializeComponent();
             campoPassword.setKeyPressEvent(campoPassword_KeyPress);
             _login = LoginService.getInstancia();
+            _login.Inicializar();//trae la lista de usuarios
         }
 
         private void btnIniciarSesion_Click(object sender, EventArgs e)
@@ -57,14 +58,5 @@ namespace SGGEA
             }
         }
 
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Usuario u = new Usuario();
-            u.Username="usuario1";
-
-            API.Controladores.Usuarios.EliminarUsuario(u);
-
-        }
     }
 }

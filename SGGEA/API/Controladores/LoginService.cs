@@ -13,6 +13,7 @@ namespace API.Controladores
     {
         private IPersistencia _persistencia;
         private Usuario _usuarioLogueado;
+        private List<Usuario> _usuarios;
         private static LoginService singleton;
 
         private LoginService()
@@ -27,13 +28,23 @@ namespace API.Controladores
             return singleton;
         }
 
+        public void Inicializar()
+        {
+            try
+            {
+                _usuarios = _persistencia.ObtenerUsuarios();
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+
         public bool ValidarLogin(string username, string password)
         {
             try
             {
-                List<Usuario> users = _persistencia.ObtenerUsuarios();
-
-                foreach (Usuario user in users)
+                foreach (Usuario user in _usuarios)
                 {
                     if (username.Equals(user.Username) && password.Equals(user.Password))
                     {
