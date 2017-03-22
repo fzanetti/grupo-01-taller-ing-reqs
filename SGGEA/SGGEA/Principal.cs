@@ -88,7 +88,7 @@ namespace SGGEA
             if (!_menuActivo)
             {
                 this.btnMenu.Image = global::SGGEA.Properties.Resources.btnAtras;
-                this.imgMenu.Visible = true;
+                this.fondoMenu.Visible = true;
                 this.btnLogout.Visible = true;
                 this.btnPerfilesUsuario.Visible = _login.UsuarioPuedeAcceder(Funciones.Admin_de_Perfiles_de_usuario);
                 this.btnFunciones.Visible = _login.UsuarioPuedeAcceder(Funciones.Admin_de_Funciones);
@@ -98,9 +98,7 @@ namespace SGGEA
                 this.btnProvisionEnergia.Visible = _login.UsuarioPuedeAcceder(Funciones.Admin_de_sistema_de_provision_de_energia);
                 this.btnConversionEnergia.Visible = _login.UsuarioPuedeAcceder(Funciones.Admin_de_sistema_de_conversion_de_energia);
                 this.btnBancosBateria.Visible = _login.UsuarioPuedeAcceder(Funciones.Admin_de_bancos_de_baterias);
-                this.Controls.SetChildIndex(this.btnPerfilesUsuario, 0);
-                this.Controls.SetChildIndex(this.btnLogout, 1);
-                this.Controls.SetChildIndex(this.imgMenu, 2);
+                VerificarPosElementos();           
                 _menuActivo = true;
             }
             else
@@ -109,10 +107,35 @@ namespace SGGEA
             }
         }
 
+        private void VerificarPosElementos()
+        {
+            this.Controls.SetChildIndex(this.confirmLogout, 0);
+            this.Controls.SetChildIndex(this.btnMenu, 1);
+            this.Controls.SetChildIndex(this.lblTitulo, 2);
+            this.Controls.SetChildIndex(this.btnBancosBateria, 3);
+            this.Controls.SetChildIndex(this.btnConversionEnergia, 4);
+            this.Controls.SetChildIndex(this.btnProvisionEnergia, 5);
+            this.Controls.SetChildIndex(this.btnControlEnergia, 6);
+            this.Controls.SetChildIndex(this.btnBancos, 7);
+            this.Controls.SetChildIndex(this.btnCompGen, 8);
+            this.Controls.SetChildIndex(this.btnFunciones, 9);
+            this.Controls.SetChildIndex(this.btnPerfilesUsuario, 10);
+            this.Controls.SetChildIndex(this.btnLogout, 11);
+            this.Controls.SetChildIndex(this.fondoMenu, 12);
+            this.Controls.SetChildIndex(this.btnBitacoraAct, 13);
+            this.Controls.SetChildIndex(this.btnMetricas, 14);
+            this.Controls.SetChildIndex(this.btnBitacoraFallas, 15);
+            this.Controls.SetChildIndex(this.btnAdminUsu, 16);
+            this.Controls.SetChildIndex(this.btnOrdenAlimentacion, 17);
+            this.Controls.SetChildIndex(this.btnConfigParam, 18);
+            this.Controls.SetChildIndex(this.btnAlertas, 19);
+            this.Controls.SetChildIndex(this.btnMonitor, 20);
+        }
+
         private void EsconderMenu()
         {
             this.btnMenu.Image = global::SGGEA.Properties.Resources.btnMenu;
-            this.imgMenu.Visible = false;
+            this.fondoMenu.Visible = false;
             this.btnPerfilesUsuario.Visible = false;
             this.btnFunciones.Visible = false;
             this.btnCompGen.Visible = false;

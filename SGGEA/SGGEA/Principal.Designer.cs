@@ -30,7 +30,6 @@ namespace SGGEA
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Principal));
-            this.imgMenu = new System.Windows.Forms.PictureBox();
             this.btnPerfilesUsuario = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
             this.btnMonitor = new System.Windows.Forms.Label();
@@ -50,20 +49,9 @@ namespace SGGEA
             this.btnBancosBateria = new System.Windows.Forms.Label();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.btnMenu = new System.Windows.Forms.Label();
+            this.fondoMenu = new System.Windows.Forms.Label();
             this.confirmLogout = new SGGEA.UserControls.ConfirmationDialog();
-            ((System.ComponentModel.ISupportInitialize)(this.imgMenu)).BeginInit();
             this.SuspendLayout();
-            // 
-            // imgMenu
-            // 
-            this.imgMenu.BackColor = System.Drawing.Color.Transparent;
-            this.imgMenu.BackgroundImage = global::SGGEA.Properties.Resources.fondoMenu;
-            this.imgMenu.Location = new System.Drawing.Point(22, 131);
-            this.imgMenu.Name = "imgMenu";
-            this.imgMenu.Size = new System.Drawing.Size(204, 533);
-            this.imgMenu.TabIndex = 1;
-            this.imgMenu.TabStop = false;
-            this.imgMenu.Visible = false;
             // 
             // btnPerfilesUsuario
             // 
@@ -307,6 +295,16 @@ namespace SGGEA
             this.btnMenu.TabIndex = 23;
             this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
             // 
+            // fondoMenu
+            // 
+            this.fondoMenu.BackColor = System.Drawing.Color.Transparent;
+            this.fondoMenu.Image = global::SGGEA.Properties.Resources.fondoMenu;
+            this.fondoMenu.Location = new System.Drawing.Point(22, 131);
+            this.fondoMenu.Name = "fondoMenu";
+            this.fondoMenu.Size = new System.Drawing.Size(204, 533);
+            this.fondoMenu.TabIndex = 24;
+            this.fondoMenu.Visible = false;
+            // 
             // confirmLogout
             // 
             this.confirmLogout.BackColor = System.Drawing.Color.Transparent;
@@ -342,6 +340,7 @@ namespace SGGEA
             this.Controls.Add(this.btnFunciones);
             this.Controls.Add(this.btnPerfilesUsuario);
             this.Controls.Add(this.btnLogout);
+            this.Controls.Add(this.fondoMenu);
             this.Controls.Add(this.btnBitacoraAct);
             this.Controls.Add(this.btnMetricas);
             this.Controls.Add(this.btnBitacoraFallas);
@@ -350,10 +349,8 @@ namespace SGGEA
             this.Controls.Add(this.btnConfigParam);
             this.Controls.Add(this.btnAlertas);
             this.Controls.Add(this.btnMonitor);
-            this.Controls.Add(this.imgMenu);
             this.Name = "Principal";
             this.Size = new System.Drawing.Size(404, 800);
-            ((System.ComponentModel.ISupportInitialize)(this.imgMenu)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -361,7 +358,6 @@ namespace SGGEA
 
         #endregion
 
-        private System.Windows.Forms.PictureBox imgMenu;
         private UserControls.ConfirmationDialog confirmLogout;
         private Button btnPerfilesUsuario;
         private Button btnLogout;
@@ -382,5 +378,6 @@ namespace SGGEA
         private Label btnBancosBateria;
         private Label lblTitulo;
         private Label btnMenu;
+        private Label fondoMenu;
     }
 }

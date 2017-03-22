@@ -89,16 +89,23 @@ namespace SGGEA.UserControls
 
         private void tbCampo_KeyPress(object sender, KeyPressEventArgs e)
         {
-            string txt = tbCampo.Text;
-            if (e.KeyChar != (char)Keys.Back)
+            if (e.KeyChar == ';')
             {
-                txt+=e.KeyChar;
+                e.Handled = true;
             }
-            else if (!String.IsNullOrEmpty(txt))
+            else
             {
-                txt = txt.Substring(0, txt.Length - 1);
+                string txt = tbCampo.Text;
+                if (e.KeyChar != (char)Keys.Back)
+                {
+                    txt += e.KeyChar;
+                }
+                else if (!String.IsNullOrEmpty(txt))
+                {
+                    txt = txt.Substring(0, txt.Length - 1);
+                }
+                lblCampo.Visible = String.IsNullOrEmpty(txt.Trim());
             }
-            lblCampo.Visible = String.IsNullOrEmpty(txt.Trim());       
         }
 
         private void lblCampo_Click(object sender, EventArgs e)
