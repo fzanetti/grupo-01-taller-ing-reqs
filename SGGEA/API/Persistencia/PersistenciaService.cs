@@ -276,7 +276,9 @@ namespace API.Persistencia
 
                 while ((tempLine = reader.ReadLine()) != null)
                 {
-                    if (tempLine.IndexOf(user.Username) != -1)
+                    string[] username = tempLine.Split(';');
+
+                    if (username[0].IndexOf(user.Username) != -1)
                     {//La linea corresponde al usuario
                      //Parseamos la linea para la persistencia
                         string line = user.Username + ";" +
@@ -351,7 +353,8 @@ namespace API.Persistencia
 
                 while ((tempLine = reader.ReadLine()) != null)
                 {
-                    if (tempLine.IndexOf(user.Username) == -1)
+                    string[] username = tempLine.Split(';');
+                    if (username[0].IndexOf(user.Username) == -1)
                     {
                         usuariosLineas.Add(tempLine);
 
