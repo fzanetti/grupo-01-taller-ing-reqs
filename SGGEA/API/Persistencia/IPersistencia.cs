@@ -9,8 +9,9 @@ namespace API.Persistencia
 {
     interface IPersistencia
     {
+        //Usuarios
         List<Usuario> ObtenerUsuarios();
-        List<Perfil> ObtenerPerfiles();
+    
         Usuario ObtenerUsuario(string username);
 
         void AgregarUsuario(Usuario user);
@@ -19,6 +20,15 @@ namespace API.Persistencia
 
         void BajaUsuario(Usuario user);
 
+        //Perfiles
+        List<Perfil> ObtenerPerfiles();
 
+        Perfil ObtenerPerfil(string nombrePerfil);
+
+        void AgregarPerfil(Perfil perfil);
+
+        void ModificarPerfil(Perfil perfil);
+
+        void BajaPerfil(Perfil perfil);
     }
 }

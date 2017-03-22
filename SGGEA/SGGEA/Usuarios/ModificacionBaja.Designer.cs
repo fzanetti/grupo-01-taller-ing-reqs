@@ -430,16 +430,16 @@ namespace SGGEA.Usuarios
             this.confirmBaja.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("confirmBaja.BackgroundImage")));
             this.confirmBaja.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.confirmBaja.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.confirmBaja.Location = new System.Drawing.Point(49, 267);
+            this.confirmBaja.Location = new System.Drawing.Point(56, 260);
             this.confirmBaja.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.confirmBaja.Name = "confirmBaja";
             this.confirmBaja.PosicionBtnAceptar = System.Windows.Forms.DockStyle.Left;
             this.confirmBaja.PosicionBtnCancelar = System.Windows.Forms.DockStyle.Right;
-            this.confirmBaja.Size = new System.Drawing.Size(310, 181);
+            this.confirmBaja.Size = new System.Drawing.Size(291, 169);
             this.confirmBaja.TabIndex = 48;
             this.confirmBaja.TextoAceptar = "Aceptar";
             this.confirmBaja.TextoCancelar = "Cancelar";
-            this.confirmBaja.TextoMensaje = "¿Está seguro que desea dar de baja al usuario?";
+            this.confirmBaja.TextoMensaje = "";
             this.confirmBaja.Visible = false;
             // 
             // toast

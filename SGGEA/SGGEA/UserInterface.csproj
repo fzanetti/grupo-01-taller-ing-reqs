@@ -76,6 +76,24 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="Perfiles\Admin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Perfiles\Admin.Designer.cs">
+      <DependentUpon>Admin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Perfiles\Alta.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Perfiles\Alta.Designer.cs">
+      <DependentUpon>Alta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Perfiles\ModificacionBaja.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Perfiles\ModificacionBaja.Designer.cs">
+      <DependentUpon>ModificacionBaja.cs</DependentUpon>
+    </Compile>
     <Compile Include="Principal.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -108,6 +126,18 @@
     </Compile>
     <Compile Include="UserControls\ConfirmationDialog.Designer.cs">
       <DependentUpon>ConfirmationDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Profile.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Profile.Designer.cs">
+      <DependentUpon>Profile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SelFuncion.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\SelFuncion.Designer.cs">
+      <DependentUpon>SelFuncion.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\SelPerfil.cs">
       <SubType>UserControl</SubType>
@@ -151,6 +181,15 @@
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Perfiles\Admin.resx">
+      <DependentUpon>Admin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Perfiles\Alta.resx">
+      <DependentUpon>Alta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Perfiles\ModificacionBaja.resx">
+      <DependentUpon>ModificacionBaja.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>
     </EmbeddedResource>
@@ -169,6 +208,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\CustomTextBox.resx">
       <DependentUpon>CustomTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Profile.resx">
+      <DependentUpon>Profile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\SelFuncion.resx">
+      <DependentUpon>SelFuncion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\SelPerfil.resx">
       <DependentUpon>SelPerfil.cs</DependentUpon>
@@ -213,9 +258,10 @@
     <Content Include="Resources\admin-usuarios-hover.png" />
     <Content Include="Resources\admin-usuarios.png" />
     <Content Include="Resources\alertas.png" />
+    <Content Include="Resources\alta-perfil-hover.png" />
+    <Content Include="Resources\alta-perfil.png" />
     <Content Include="Resources\alta-usuario-hover.png" />
     <Content Include="Resources\alta-usuario.png" />
-    <Content Include="Resources\alta_de_usuario.png" />
     <Content Include="Resources\bitacora-act.png" />
     <Content Include="Resources\bitacora-fallas.png" />
     <Content Include="Resources\btnAtras.png" />
@@ -223,12 +269,13 @@
     <Content Include="Resources\checkBox.png" />
     <Content Include="Resources\checkBoxChequed.png" />
     <Content Include="Resources\config-parametros.png" />
+    <Content Include="Resources\fondo-alta-perfil.png" />
     <Content Include="Resources\fondo-menu.png" />
+    <Content Include="Resources\fondo-modif-perfil.png" />
     <Content Include="Resources\fondo-pantalla.png" />
     <Content Include="Resources\fondo-selperfiles.png" />
     <Content Include="Resources\fondo-text-box.png" />
     <Content Include="Resources\fondo-toast.png" />
-    <None Include="Resources\fondo-toast1.png" />
     <Content Include="Resources\fondo-usuario-hover.png" />
     <Content Include="Resources\fondo-usuario.png" />
     <Content Include="Resources\fondoPopup.png" />

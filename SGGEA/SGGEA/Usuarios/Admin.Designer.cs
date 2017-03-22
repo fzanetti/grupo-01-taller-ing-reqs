@@ -75,7 +75,7 @@ namespace SGGEA.Usuarios
             // 
             this.btnAltaUsuario.BackColor = System.Drawing.Color.Transparent;
             this.btnAltaUsuario.Image = global::SGGEA.Properties.Resources.altaUsuario;
-            this.btnAltaUsuario.Location = new System.Drawing.Point(320, 599);
+            this.btnAltaUsuario.Location = new System.Drawing.Point(315, 591);
             this.btnAltaUsuario.Name = "btnAltaUsuario";
             this.btnAltaUsuario.Size = new System.Drawing.Size(48, 48);
             this.btnAltaUsuario.TabIndex = 0;
@@ -97,7 +97,7 @@ namespace SGGEA.Usuarios
             this.user1.Size = new System.Drawing.Size(333, 50);
             this.user1.TabIndex = 0;
             // 
-            // AdminUsuarios
+            // Admin
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
@@ -106,7 +106,7 @@ namespace SGGEA.Usuarios
             this.Controls.Add(this.flowLayoutPanel);
             this.Controls.Add(this.btnAtras);
             this.Controls.Add(this.lblTitulo);
-            this.Name = "AdminUsuarios";
+            this.Name = "Admin";
             this.Size = new System.Drawing.Size(404, 800);
             this.ResumeLayout(false);
             this.PerformLayout();

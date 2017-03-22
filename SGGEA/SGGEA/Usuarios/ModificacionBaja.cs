@@ -23,6 +23,7 @@ namespace SGGEA.Usuarios
             InitializeComponent();
             lblTitulo.Text = _usuario.Username;
             _perfiles = new List<SelPerfil>();
+            this.confirmBaja.TextoMensaje = Globals.ConfirmacionBajaUsuario;
             AgregarPerfiles();
             lblErrorPerfiles.Text = Globals.ErrorSelPerfiles;
             this.confirmBaja.setConfirmationClickEvent(this.btnConfirmarBaja_Click);

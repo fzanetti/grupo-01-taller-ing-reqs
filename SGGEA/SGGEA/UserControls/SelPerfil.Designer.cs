@@ -44,6 +44,7 @@
             this.lblPerfil.Size = new System.Drawing.Size(176, 18);
             this.lblPerfil.TabIndex = 3;
             this.lblPerfil.Text = "Perfil";
+            this.lblPerfil.Click += new System.EventHandler(this.btnPerfil_Click);
             // 
             // btnPerfil
             // 

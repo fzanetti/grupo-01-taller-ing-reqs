@@ -59,16 +59,13 @@ namespace SGGEA.Usuarios
 
         private bool ValidarCampoCompletado(CustomTextBox campo)
         {
+            campo.TextoError = String.Empty;
             if (String.IsNullOrEmpty(campo.TextoCampo.Trim()))
             {
                 campo.TextoError = Globals.ErrorCampoObl;
                 return false;
             }
-            else
-            {
-                campo.TextoError = String.Empty;
-                return true;
-            }
+            return true;
         }
 
         private void btnCrear_Click(object sender, EventArgs e)
@@ -83,33 +80,43 @@ namespace SGGEA.Usuarios
             string departamento = campoDto.TextoCampo.Trim();
             string cargo = campoCargo.TextoCampo.Trim();
 
-            bool camposCompletos = true;
+            bool validacionCorrecta = true;
             if (!ValidarCampoCompletado(campoUsername))
-                camposCompletos = false;
+            {
+                validacionCorrecta = false;
+            }
+            else
+            {
+                if (API.Controladores.Usuarios.ExisteUsuario(username))
+                {
+                    campoUsername.TextoError = Globals.ErrorUsernameRegistrado;
+                    validacionCorrecta = false;
+                }
+            }
 
             if (!ValidarCampoCompletado(campoPassword))
-                camposCompletos = false;
+                validacionCorrecta = false;
 
             if (!ValidarCampoCompletado(campoNombre))
-                camposCompletos = false;
+                validacionCorrecta = false;
 
             if (!ValidarCampoCompletado(campoApellido))
-                camposCompletos = false;
+                validacionCorrecta = false;
 
             if (!ValidarCampoCompletado(campoEmail))
-                camposCompletos = false;
+                validacionCorrecta = false;
 
             if (!ValidarCampoCompletado(campoPlanta))
-                camposCompletos = false;
+                validacionCorrecta = false;
 
             if (!ValidarCampoCompletado(campoUbicacion))
-                camposCompletos = false;
+                validacionCorrecta = false;
 
             if (!ValidarCampoCompletado(campoDto))
-                camposCompletos = false;
+                validacionCorrecta = false;
 
             if (!ValidarCampoCompletado(campoCargo))
-                camposCompletos = false;
+                validacionCorrecta = false;
 
             List<Perfil> perfilesUsuario = new List<Perfil>();
             foreach (SelPerfil selPer in _perfiles)
@@ -122,41 +129,34 @@ namespace SGGEA.Usuarios
             if (perfilesUsuario.Count == 0)
             {
                 lblErrorPerfiles.Visible = true;
-                camposCompletos = false;
+                validacionCorrecta = false;
             }
             else
             {
                 lblErrorPerfiles.Visible = false;
             }
 
-            if (camposCompletos)
+            if (validacionCorrecta)
             {
-                if (API.Controladores.Usuarios.ExisteUsuario(username))
+                Usuario nuevo = new Usuario();
+                nuevo.Username = username;
+                nuevo.Password = password;
+                nuevo.Nombre = nombre;
+                nuevo.Apellido = apellido;
+                nuevo.Email = email;
+                nuevo.Planta = planta;
+                nuevo.UbicacionFisica = ubicacion;
+                nuevo.Departamento = departamento;
+                nuevo.Cargo = cargo;
+                nuevo.Perfiles = perfilesUsuario;
+                bool altaOk = API.Controladores.Usuarios.AltaUsuario(nuevo);
+                if (altaOk)
                 {
-                    campoUsername.TextoError = Globals.ErrorUsernameRegistrado;
+                    toast.MostrarMensaje(Globals.AltaUsuarioOk);
                 }
                 else
                 {
-                    Usuario nuevo = new Usuario();
-                    nuevo.Username = username;
-                    nuevo.Password = password;
-                    nuevo.Nombre = nombre;
-                    nuevo.Apellido = apellido;
-                    nuevo.Email = email;
-                    nuevo.Planta = planta;
-                    nuevo.UbicacionFisica = ubicacion;
-                    nuevo.Departamento = departamento;
-                    nuevo.Cargo = cargo;
-                    nuevo.Perfiles = perfilesUsuario;
-                    bool altaOk = API.Controladores.Usuarios.AltaUsuario(nuevo);
-                    if (altaOk)
-                    {
-                        toast.MostrarMensaje(Globals.AltaUsuarioOk);
-                    }
-                    else
-                    {
-                        toast.MostrarMensaje(Globals.AltaUsuarioError,false);
-                    }
+                    toast.MostrarMensaje(Globals.AltaUsuarioError, false);
                 }
             }
         }

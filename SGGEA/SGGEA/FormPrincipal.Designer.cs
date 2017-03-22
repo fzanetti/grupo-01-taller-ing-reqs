@@ -1,4 +1,4 @@
-﻿using SGGEA.Usuarios;
+﻿using System.ComponentModel;
 namespace SGGEA
 {
     partial class FormPrincipal
@@ -30,16 +30,18 @@ namespace SGGEA
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources= new System.ComponentModel.ComponentResourceManager(typeof(FormPrincipal));
-            this.SuspendLayout();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPrincipal));
             this.login = new SGGEA.Login();
+            this.SuspendLayout();
+            // 
+            // login
+            // 
             this.login.BackColor = System.Drawing.Color.White;
             this.login.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("login.BackgroundImage")));
             this.login.Location = new System.Drawing.Point(0, 0);
             this.login.Name = "login";
             this.login.Size = new System.Drawing.Size(404, 800);
             this.login.TabIndex = 0;
-        
             // 
             // FormPrincipal
             // 
@@ -47,6 +49,7 @@ namespace SGGEA
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(404, 800);
+            this.Controls.Add(this.login);
             this.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -55,8 +58,6 @@ namespace SGGEA
             this.Name = "FormPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sunny Patch";
-            this.Controls.Add(this.login);
-
             this.ResumeLayout(false);
 
         }
@@ -80,7 +81,7 @@ namespace SGGEA
 
         public void InitializePrincipal()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPrincipal));
+            ComponentResourceManager resources = new ComponentResourceManager(typeof(FormPrincipal));
             this.SuspendLayout();
             this.principal = new SGGEA.Principal();
             this.principal.BackColor = System.Drawing.Color.White;
@@ -96,9 +97,9 @@ namespace SGGEA
 
         public void InitializeAdminUsuarios()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPrincipal));
+            ComponentResourceManager resources = new ComponentResourceManager(typeof(FormPrincipal));
             this.SuspendLayout();
-            this.adminUsuarios = new Admin();
+            this.adminUsuarios = new Usuarios.Admin();
             this.adminUsuarios.BackColor = System.Drawing.Color.White;
             this.adminUsuarios.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("principal.BackgroundImage")));
             this.adminUsuarios.Location = new System.Drawing.Point(0, 0);
@@ -112,9 +113,9 @@ namespace SGGEA
 
         public void InitializeAltaUsuario()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPrincipal));
+            ComponentResourceManager resources = new ComponentResourceManager(typeof(FormPrincipal));
             this.SuspendLayout();
-            this.altaUsuario = new Alta();
+            this.altaUsuario = new Usuarios.Alta();
             this.altaUsuario.BackColor = System.Drawing.Color.White;
             this.altaUsuario.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("principal.BackgroundImage")));
             this.altaUsuario.Location = new System.Drawing.Point(0, 0);
@@ -128,9 +129,9 @@ namespace SGGEA
 
         public void InitializeModifUsuario(string username)
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPrincipal));
+            ComponentResourceManager resources = new ComponentResourceManager(typeof(FormPrincipal));
             this.SuspendLayout();
-            this.modifUsuario = new ModificacionBaja(username);
+            this.modifUsuario = new Usuarios.ModificacionBaja(username);
             this.modifUsuario.BackColor = System.Drawing.Color.White;
             this.modifUsuario.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("principal.BackgroundImage")));
             this.modifUsuario.Location = new System.Drawing.Point(0, 0);
@@ -141,16 +142,66 @@ namespace SGGEA
             this.Controls.Add(this.modifUsuario);
             this.ResumeLayout(false);
         }
+
+        public void InitializeAdminPerfiles()
+        {
+            ComponentResourceManager resources = new ComponentResourceManager(typeof(FormPrincipal));
+            this.SuspendLayout();
+            this.adminPerfiles = new Perfiles.Admin();
+            this.adminPerfiles.BackColor = System.Drawing.Color.White;
+            this.adminPerfiles.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("principal.BackgroundImage")));
+            this.adminPerfiles.Location = new System.Drawing.Point(0, 0);
+            this.adminPerfiles.Name = "adminPerfiles";
+            this.adminPerfiles.Size = new System.Drawing.Size(404, 800);
+            this.adminPerfiles.TabIndex = 6;
+            this.Controls.Clear();
+            this.Controls.Add(this.adminPerfiles);
+            this.ResumeLayout(false);
+        }
+
+        public void InitializeAltaPerfil()
+        {
+            ComponentResourceManager resources = new ComponentResourceManager(typeof(FormPrincipal));
+            this.SuspendLayout();
+            this.altaPerfil = new Perfiles.Alta();
+            this.altaPerfil.BackColor = System.Drawing.Color.White;
+            this.altaPerfil.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("altaPerfil.BackgroundImage")));
+            this.altaPerfil.Location = new System.Drawing.Point(0, 0);
+            this.altaPerfil.Name = "altaPerfiles";
+            this.altaPerfil.Size = new System.Drawing.Size(404, 800);
+            this.altaPerfil.TabIndex = 7;
+            this.Controls.Clear();
+            this.Controls.Add(this.altaPerfil);
+            this.ResumeLayout(false);
+        }
+
+        public void InitializeModifPerfil(string nombrePerfil)
+        {
+            ComponentResourceManager resources = new ComponentResourceManager(typeof(FormPrincipal));
+            this.SuspendLayout();
+            this.modifPerfil = new Perfiles.ModificacionBaja(nombrePerfil);
+            this.modifPerfil.BackColor = System.Drawing.Color.White;
+            this.modifPerfil.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("modifPerfil.BackgroundImage")));
+            this.modifPerfil.Location = new System.Drawing.Point(0, 0);
+            this.modifPerfil.Name = "modifPerfiles";
+            this.modifPerfil.Size = new System.Drawing.Size(404, 800);
+            this.modifPerfil.TabIndex = 8;
+            this.Controls.Clear();
+            this.Controls.Add(this.modifPerfil);
+            this.ResumeLayout(false);
+        }
         
 
         #endregion
 
         private Login login;
         private Principal principal;
-        private Admin adminUsuarios;
-        private Alta altaUsuario;
-        private ModificacionBaja modifUsuario;
-
+        private Usuarios.Admin adminUsuarios;
+        private Usuarios.Alta altaUsuario;
+        private Usuarios.ModificacionBaja modifUsuario;
+        private Perfiles.Admin adminPerfiles;
+        private Perfiles.Alta altaPerfil;
+        private Perfiles.ModificacionBaja modifPerfil;
 
 
 

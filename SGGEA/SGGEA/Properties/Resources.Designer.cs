@@ -93,9 +93,19 @@ namespace SGGEA.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap alta_de_usuario {
+        internal static System.Drawing.Bitmap altaPerfil {
             get {
-                object obj = ResourceManager.GetObject("alta_de_usuario", resourceCulture);
+                object obj = ResourceManager.GetObject("altaPerfil", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap altaPerfilHover {
+            get {
+                object obj = ResourceManager.GetObject("altaPerfilHover", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -193,9 +203,29 @@ namespace SGGEA.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap fondoAltaPerfil {
+            get {
+                object obj = ResourceManager.GetObject("fondoAltaPerfil", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap fondoMenu {
             get {
                 object obj = ResourceManager.GetObject("fondoMenu", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fondoModifPerfil {
+            get {
+                object obj = ResourceManager.GetObject("fondoModifPerfil", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

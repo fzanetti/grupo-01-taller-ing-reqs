@@ -20,14 +20,14 @@ namespace SGGEA
         {
             InitializeComponent();
             _login = LoginService.getInstancia();
-            this.btnAdminUsu.Visible = _login.UsuarioPuedeAcceder(Funciones.Admin_de_usuarios);
-            this.btnAlertas.Visible = _login.UsuarioPuedeAcceder(Funciones.Alerta_de_fallas_del_sistema);
-            this.btnBitacoraAct.Visible = _login.UsuarioPuedeAcceder(Funciones.Visualizacion_de_registro_de_actividad_de_usuario);
-            this.btnBitacoraFallas.Visible = _login.UsuarioPuedeAcceder(Funciones.Visualizacion_de_la_bitacora_de_fallas_del_sistema);
-            this.btnConfigParam.Visible = _login.UsuarioPuedeAcceder(Funciones.Admin_de_parametros_del_sistema);
-            this.btnMetricas.Visible = _login.UsuarioPuedeAcceder(Funciones.Visualizacion_de_metricas_historicas_de_energia);
-            this.btnMonitor.Visible = _login.UsuarioPuedeAcceder(Funciones.Monitoreo_de_red_de_energia);
-            this.btnOrdenAlimentacion.Visible = _login.UsuarioPuedeAcceder(Funciones.Configuracion_de_orden_de_alimentacion_de_energia);
+            btnAdminUsu.Visible = _login.UsuarioPuedeAcceder(Funciones.Admin_de_usuarios);
+            btnAlertas.Visible = _login.UsuarioPuedeAcceder(Funciones.Alerta_de_fallas_del_sistema);
+            btnBitacoraAct.Visible = _login.UsuarioPuedeAcceder(Funciones.Visualizacion_de_registro_de_actividad_de_usuario);
+            btnBitacoraFallas.Visible = _login.UsuarioPuedeAcceder(Funciones.Visualizacion_de_la_bitacora_de_fallas_del_sistema);
+            btnConfigParam.Visible = _login.UsuarioPuedeAcceder(Funciones.Admin_de_parametros_del_sistema);
+            btnMetricas.Visible = _login.UsuarioPuedeAcceder(Funciones.Visualizacion_de_metricas_historicas_de_energia);
+            btnMonitor.Visible = _login.UsuarioPuedeAcceder(Funciones.Monitoreo_de_red_de_energia);
+            btnOrdenAlimentacion.Visible = _login.UsuarioPuedeAcceder(Funciones.Configuracion_de_orden_de_alimentacion_de_energia);
             this.confirmLogout.setConfirmationClickEvent(this.btnConfirmarLogout_Click);
             this.confirmLogout.setCancelClickEvent(this.btnCancelarLogout_Click);
         }
@@ -80,6 +80,7 @@ namespace SGGEA
         private void btnPerfilesUsuario_Click(object sender, EventArgs e)
         {
             EsconderMenu();
+            FormPrincipal.getInstancia().InitializeAdminPerfiles();
         }
 
         private void btnMenu_Click(object sender, EventArgs e)

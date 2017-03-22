@@ -36,7 +36,7 @@ namespace API.Persistencia
 
             return usuarios;
         }
-
+        
         public Usuario ObtenerUsuario(string username)
         {
             List<Usuario> usuarios = ObtenerUsuarios();
@@ -77,6 +77,12 @@ namespace API.Persistencia
             }
 
             return perfiles;
+        }
+
+        public Perfil ObtenerPerfil(string nombrePerfil)
+        {
+            List<Perfil> perfiles = ObtenerPerfiles();
+            return perfiles.Find(prf => prf.Nombre.Equals(nombrePerfil));
         }
 
         private List<Perfil> ObtenerPerfilesUsuario(Usuario usr)
@@ -248,22 +254,10 @@ namespace API.Persistencia
 
             File.AppendAllText(_archivoUsuarios, "\r\n"+line);
 
-            ////using (Stream stream = assembly.GetManifestResourceStream(_archivoUsuarios))
-            //using (StreamWriter writer = File.AppendText(_archivoUsuarios))
-            //{
-            //    //writer.WriteLine(String.Empty);
-            //    writer.WriteLine(line);
-            //    writer.Close();
-            //}
-
             //Ahora persistimos los perfiles
             foreach(Perfil p in user.Perfiles)
             {
                 File.AppendAllText(_archivoUsuariosPerfiles, "\r\n" + user.Username + ";" + p.Id.ToString());
-                //using(StreamWriter writer = File.AppendText(_archivoUsuariosPerfiles))
-                //{
-                //    writer.WriteLine(user.Username + ";" + p.Id.ToString());
-                //}
             }
 
         }
@@ -321,18 +315,15 @@ namespace API.Persistencia
                         if (tempLine.IndexOf(user.Username) == -1)//La linea no corresponde al usuario
                             perfilesLineas.Add(tempLine);
                     }
+            }
 
-                    //Ahora, recorremos los perfiles y los agregamos al archivo
-
-                foreach(Perfil p in user.Perfiles)
-                    {
-                        perfilesLineas.Add(user.Username + ";" + p.Id.ToString());
-                    }
-                
+            //Ahora, recorremos los perfiles y los agregamos al archivo
+            foreach (Perfil p in user.Perfiles)
+            {
+                perfilesLineas.Add(user.Username + ";" + p.Id.ToString());
             }
 
             //Ahora escribimos los datos en el archivo
-
             using (StreamWriter writer = new StreamWriter(_archivoUsuariosPerfiles))
             {
                 foreach (string s in perfilesLineas)
@@ -388,6 +379,126 @@ namespace API.Persistencia
             using (StreamWriter writer = new StreamWriter(_archivoUsuariosPerfiles))
             {
                 foreach (string s in perfilesLineas)
+                {
+                    writer.WriteLine(s);
+                }
+            }
+        }
+
+        public void AgregarPerfil(Perfil perfil)
+        {
+            //Nos fijamos el numero del ultimo perfil registrado.
+            var lastLine = File.ReadLines(_archivoPerfiles).Last();
+            Perfil ultimo=ParsearPerfil(lastLine);
+            perfil.Id = ultimo.Id + 1;
+
+            //Generamos la linea para agregar a la persistencia
+            string line = perfil.Id + ";" + perfil.Nombre;
+
+            File.AppendAllText(_archivoPerfiles, "\r\n" + line);
+
+            //Ahora persistimos las funciones
+            foreach (Funcion f in perfil.Funciones)
+            {
+                File.AppendAllText(_archivoPerfilesFunciones, "\r\n" + perfil.Id + ";" + f.Valor);
+            }
+        }
+
+        public void ModificarPerfil(Perfil perfil)
+        {
+            string tempLine;         
+            List<string> funcionesLineas = new List<string>();
+
+            //Actualizamos las funciones del perfil
+            using (StreamReader reader = new StreamReader(_archivoPerfilesFunciones))
+            {
+                while ((tempLine = reader.ReadLine()) != null)
+                {
+                    if (tempLine.IndexOf(perfil.Id.ToString()) == -1)//La linea no corresponde al perfil
+                        funcionesLineas.Add(tempLine);
+                }
+            }
+
+            //Ahora, recorremos las funciones y las agregamos al archivo
+            foreach (Funcion f in perfil.Funciones)
+            {
+                funcionesLineas.Add(perfil.Id.ToString() + ";" + f.Valor);
+            }
+
+            //Ahora escribimos los datos en el archivo
+            using (StreamWriter writer = new StreamWriter(_archivoPerfilesFunciones))
+            {
+                foreach (string s in funcionesLineas)
+                {
+                    writer.WriteLine(s);
+                }
+            }
+
+        }
+
+        public void BajaPerfil(Perfil perfil)
+        {
+            List<string> perfilesLineas = new List<String>();
+
+            string tempLine;
+            using (StreamReader reader = new StreamReader(_archivoPerfiles))
+            {
+                while ((tempLine = reader.ReadLine()) != null)
+                {
+                    if (tempLine.IndexOf(perfil.Id.ToString()) == -1)
+                    {
+                        perfilesLineas.Add(tempLine);
+                    }
+                }
+            }
+
+            //Ahora escribimos los datos en el archivo
+            using (StreamWriter writer = new StreamWriter(_archivoPerfiles))
+            {
+                foreach (string s in perfilesLineas)
+                {
+                    writer.WriteLine(s);
+                }
+            }
+
+            List<string> usuariosLineas = new List<string>();
+
+            //Ahora actualizamos las referencias de los usuarios al perfil
+            using (StreamReader reader = new StreamReader(_archivoUsuariosPerfiles))
+            {
+                while ((tempLine = reader.ReadLine()) != null)
+                {
+                    if (tempLine.IndexOf(perfil.Id.ToString()) == -1)
+                        usuariosLineas.Add(tempLine);
+                }
+            }
+
+            //Ahora escribimos los datos en el archivo
+            using (StreamWriter writer = new StreamWriter(_archivoUsuariosPerfiles))
+            {
+                foreach (string s in usuariosLineas)
+                {
+                    writer.WriteLine(s);
+                }
+            }
+
+
+            List<string> funcionesLineas = new List<string>();
+
+            //Ahora actualizamos las referencias de las funciones al perfil
+            using (StreamReader reader = new StreamReader(_archivoPerfilesFunciones))
+            {
+                while ((tempLine = reader.ReadLine()) != null)
+                {
+                    if (tempLine.IndexOf(perfil.Id.ToString()) == -1)
+                        usuariosLineas.Add(tempLine);
+                }
+            }
+
+            //Ahora escribimos los datos en el archivo
+            using (StreamWriter writer = new StreamWriter(_archivoPerfilesFunciones))
+            {
+                foreach (string s in funcionesLineas)
                 {
                     writer.WriteLine(s);
                 }

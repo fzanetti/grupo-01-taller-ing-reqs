@@ -19,3 +19,8 @@ C:\Users\Fernando Zanetti\Documents\Obligatorio Taller Ing. Req\grupo-01-taller-
 C:\Users\Fernando Zanetti\Documents\Obligatorio Taller Ing. Req\grupo-01-taller-ing-reqs\SGGEA\SGGEA\obj\Release\SGGEA.Usuarios.Admin.resources
 C:\Users\Fernando Zanetti\Documents\Obligatorio Taller Ing. Req\grupo-01-taller-ing-reqs\SGGEA\SGGEA\obj\Release\SGGEA.Usuarios.Alta.resources
 C:\Users\Fernando Zanetti\Documents\Obligatorio Taller Ing. Req\grupo-01-taller-ing-reqs\SGGEA\SGGEA\obj\Release\SGGEA.Usuarios.ModificacionBaja.resources
+C:\Users\Fernando Zanetti\Documents\Obligatorio Taller Ing. Req\grupo-01-taller-ing-reqs\SGGEA\SGGEA\obj\Release\SGGEA.Perfiles.Admin.resources
+C:\Users\Fernando Zanetti\Documents\Obligatorio Taller Ing. Req\grupo-01-taller-ing-reqs\SGGEA\SGGEA\obj\Release\SGGEA.Perfiles.Alta.resources
+C:\Users\Fernando Zanetti\Documents\Obligatorio Taller Ing. Req\grupo-01-taller-ing-reqs\SGGEA\SGGEA\obj\Release\SGGEA.Perfiles.ModificacionBaja.resources
+C:\Users\Fernando Zanetti\Documents\Obligatorio Taller Ing. Req\grupo-01-taller-ing-reqs\SGGEA\SGGEA\obj\Release\SGGEA.UserControls.Profile.resources
+C:\Users\Fernando Zanetti\Documents\Obligatorio Taller Ing. Req\grupo-01-taller-ing-reqs\SGGEA\SGGEA\obj\Release\SGGEA.UserControls.SelFuncion.resources

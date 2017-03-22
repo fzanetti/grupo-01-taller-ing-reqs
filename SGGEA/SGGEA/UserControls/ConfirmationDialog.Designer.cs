@@ -40,10 +40,10 @@
             this.mensaje.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.mensaje.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.mensaje.Enabled = false;
-            this.mensaje.Location = new System.Drawing.Point(38, 38);
+            this.mensaje.Location = new System.Drawing.Point(22, 28);
             this.mensaje.Multiline = true;
             this.mensaje.Name = "mensaje";
-            this.mensaje.Size = new System.Drawing.Size(236, 58);
+            this.mensaje.Size = new System.Drawing.Size(245, 58);
             this.mensaje.TabIndex = 1;
             this.mensaje.Text = "Mensaje";
             this.mensaje.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -52,7 +52,7 @@
             // 
             this.panel1.Controls.Add(this.btnCancelar);
             this.panel1.Controls.Add(this.btnAceptar);
-            this.panel1.Location = new System.Drawing.Point(42, 102);
+            this.panel1.Location = new System.Drawing.Point(31, 102);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(227, 36);
             this.panel1.TabIndex = 4;
@@ -99,7 +99,7 @@
             this.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.Name = "ConfirmationDialog";
-            this.Size = new System.Drawing.Size(310, 181);
+            this.Size = new System.Drawing.Size(291, 161);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

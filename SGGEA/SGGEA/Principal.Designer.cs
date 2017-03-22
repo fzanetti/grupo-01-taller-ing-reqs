@@ -313,16 +313,16 @@ namespace SGGEA
             this.confirmLogout.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("confirmLogout.BackgroundImage")));
             this.confirmLogout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.confirmLogout.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.confirmLogout.Location = new System.Drawing.Point(49, 267);
+            this.confirmLogout.Location = new System.Drawing.Point(57, 267);
             this.confirmLogout.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.confirmLogout.Name = "confirmLogout";
             this.confirmLogout.PosicionBtnAceptar = System.Windows.Forms.DockStyle.Left;
             this.confirmLogout.PosicionBtnCancelar = System.Windows.Forms.DockStyle.Right;
-            this.confirmLogout.Size = new System.Drawing.Size(310, 181);
+            this.confirmLogout.Size = new System.Drawing.Size(291, 161);
             this.confirmLogout.TabIndex = 9;
             this.confirmLogout.TextoAceptar = "Aceptar";
             this.confirmLogout.TextoCancelar = "Cancelar";
-            this.confirmLogout.TextoMensaje = Globals.ConfirmacionSalir;
+            this.confirmLogout.TextoMensaje = "¿Seguro que desea salir?";
             this.confirmLogout.Visible = false;
             // 
             // Principal
@@ -342,7 +342,6 @@ namespace SGGEA
             this.Controls.Add(this.btnFunciones);
             this.Controls.Add(this.btnPerfilesUsuario);
             this.Controls.Add(this.btnLogout);
-            this.Controls.Add(this.imgMenu);
             this.Controls.Add(this.btnBitacoraAct);
             this.Controls.Add(this.btnMetricas);
             this.Controls.Add(this.btnBitacoraFallas);
@@ -351,6 +350,7 @@ namespace SGGEA
             this.Controls.Add(this.btnConfigParam);
             this.Controls.Add(this.btnAlertas);
             this.Controls.Add(this.btnMonitor);
+            this.Controls.Add(this.imgMenu);
             this.Name = "Principal";
             this.Size = new System.Drawing.Size(404, 800);
             ((System.ComponentModel.ISupportInitialize)(this.imgMenu)).EndInit();
