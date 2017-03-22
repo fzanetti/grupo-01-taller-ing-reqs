@@ -7,6 +7,7 @@ using System.Reflection;
 using System.IO;
 using API.Dominio;
 using API.Controladores;
+using System.Threading;
 
 namespace API.Persistencia
 {
@@ -260,6 +261,8 @@ namespace API.Persistencia
                 File.AppendAllText(_archivoUsuariosPerfiles, "\r\n" + user.Username + ";" + p.Id.ToString());
             }
 
+            CleanFileWrapper(_archivoUsuarios);
+
         }
 
         public void ModificarUsuario(Usuario user)
@@ -305,6 +308,8 @@ namespace API.Persistencia
                 }
             }
 
+            CleanFileWrapper(_archivoUsuarios);
+
             List<string> perfilesLineas = new List<string>();
 
             //Ahora modificamos los datos del perfil
@@ -331,6 +336,8 @@ namespace API.Persistencia
                     writer.WriteLine(s);
                 }
             }
+
+            CleanFileWrapper(_archivoUsuariosPerfiles);
 
         }
 
@@ -362,6 +369,8 @@ namespace API.Persistencia
                 }
             }
 
+            CleanFileWrapper(_archivoUsuarios);
+
             List<string> perfilesLineas = new List<string>();
 
             //Ahora modificamos los datos del perfil
@@ -383,6 +392,8 @@ namespace API.Persistencia
                     writer.WriteLine(s);
                 }
             }
+
+            CleanFileWrapper(_archivoUsuariosPerfiles);
         }
 
         public void AgregarPerfil(Perfil perfil)
@@ -402,6 +413,8 @@ namespace API.Persistencia
             {
                 File.AppendAllText(_archivoPerfilesFunciones, "\r\n" + perfil.Id + ";" + f.Valor);
             }
+
+            CleanFileWrapper(_archivoPerfilesFunciones);
         }
 
         public void ModificarPerfil(Perfil perfil)
@@ -414,7 +427,7 @@ namespace API.Persistencia
             {
                 while ((tempLine = reader.ReadLine()) != null)
                 {
-                    if (tempLine.IndexOf(perfil.Id.ToString()) == -1)//La linea no corresponde al perfil
+                    if (tempLine.IndexOf(perfil.Id.ToString()+";") == -1)//La linea no corresponde al perfil
                         funcionesLineas.Add(tempLine);
                 }
             }
@@ -434,6 +447,8 @@ namespace API.Persistencia
                 }
             }
 
+            CleanFileWrapper(_archivoPerfilesFunciones);
+
         }
 
         public void BajaPerfil(Perfil perfil)
@@ -445,7 +460,7 @@ namespace API.Persistencia
             {
                 while ((tempLine = reader.ReadLine()) != null)
                 {
-                    if (tempLine.IndexOf(perfil.Id.ToString()) == -1)
+                    if (tempLine.IndexOf(perfil.Id.ToString()+";") == -1)
                     {
                         perfilesLineas.Add(tempLine);
                     }
@@ -461,6 +476,8 @@ namespace API.Persistencia
                 }
             }
 
+            CleanFileWrapper(_archivoPerfiles);
+
             List<string> usuariosLineas = new List<string>();
 
             //Ahora actualizamos las referencias de los usuarios al perfil
@@ -468,7 +485,7 @@ namespace API.Persistencia
             {
                 while ((tempLine = reader.ReadLine()) != null)
                 {
-                    if (tempLine.IndexOf(perfil.Id.ToString()) == -1)
+                    if (tempLine.IndexOf(";"+perfil.Id.ToString()) == -1)
                         usuariosLineas.Add(tempLine);
                 }
             }
@@ -482,6 +499,7 @@ namespace API.Persistencia
                 }
             }
 
+            CleanFileWrapper(_archivoUsuariosPerfiles);
 
             List<string> funcionesLineas = new List<string>();
 
@@ -490,8 +508,8 @@ namespace API.Persistencia
             {
                 while ((tempLine = reader.ReadLine()) != null)
                 {
-                    if (tempLine.IndexOf(perfil.Id.ToString()) == -1)
-                        usuariosLineas.Add(tempLine);
+                    if (tempLine.IndexOf(perfil.Id.ToString()+";") == -1)
+                        funcionesLineas.Add(tempLine);
                 }
             }
 
@@ -503,6 +521,35 @@ namespace API.Persistencia
                     writer.WriteLine(s);
                 }
             }
+
+            CleanFileWrapper(_archivoPerfilesFunciones);
+        }
+
+        private void CleanFileWrapper(String fileName)
+        {
+            var t = Task.Run(() => CleanFile(fileName));
+
+        }
+        private void CleanFile(String fileName)
+        {
+            string[] lines = File.ReadAllLines(fileName);
+            int count = lines.Length;
+
+
+            //Ahora escribimos los datos en el archivo
+            using (StreamWriter writer = new StreamWriter(fileName))
+            {
+                for (int i = 0; i < count-1; i++)
+                {
+                    writer.WriteLine(lines[i]);
+
+                }
+                //La ultima linea la escribimos sin retorno de linea
+                writer.Write(lines[count - 1]);
+            }
+
+            
+            
         }
     }
 }
